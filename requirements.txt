@@ -1,20 +1,11 @@
 # Core RAG Dependencies
-transformers>=4.40.0
-torch>=2.0.0
 sentence-transformers>=2.2.0
 chromadb>=0.4.0
 langchain>=0.2.0
 langchain-community>=0.2.0
 
-# Model Loading and Inference
-huggingface-hub>=0.20.0
-accelerate>=0.20.0
-bitsandbytes>=0.41.0
-safetensors>=0.3.0
-# GGUF Support for MedGemma-4B-IT-GGUF
-llama-cpp-python>=0.2.0
-gguf>=0.1.0
-ctransformers>=0.2.0
+# Ollama Integration
+requests>=2.31.0
 
 # RAGFlow Dependencies
 ragflow>=0.8.0

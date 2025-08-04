@@ -1,195 +1,157 @@
 """
-Real AI Model Loading for Hospital RAG System
-Loads Qwen3-1.7B and MedGemma-4B models using Hugging Face Transformers
+Ollama Model Loading for Hospital RAG System
+Uses Ollama to manage and run the gemma3:4b-it-q4_K_M model
 """
 
-import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+import requests
+import json
 from typing import Dict, Any, Optional
 import logging
 
 logger = logging.getLogger(__name__)
 
-# GGUF support for MedGemma-4B-IT-GGUF
-try:
-    from llama_cpp import Llama
-    GGUF_AVAILABLE = True
-except ImportError:
-    GGUF_AVAILABLE = False
-    logger.warning("llama-cpp-python not available, GGUF models will not work")
-
 class ModelManager:
-    def __init__(self):
-        self.models = {}
-        self.tokenizers = {}
-        self.device = "cuda" if torch.cuda.is_available() else "cpu"
-        
-    def load_qwen3_model(self):
-        """Load Qwen3-1.7B model"""
+    def __init__(self, ollama_url: str = "http://localhost:11434"):
+        self.ollama_url = ollama_url
+        self.loaded_models = set()
+        self.default_model = "gemma3:4b-it-q4_K_M"
+    
+    def check_ollama_connection(self) -> bool:
+        """Check if Ollama is running and accessible"""
         try:
-            model_name = "Qwen/Qwen2.5-1.5B-Instruct"  # Updated model name
-            
-            # 4-bit quantization config for memory efficiency
-            quantization_config = BitsAndBytesConfig(
-                load_in_4bit=True,
-                bnb_4bit_quant_type="nf4",
-                bnb_4bit_compute_dtype=torch.float16,
-                bnb_4bit_use_double_quant=True
-            )
-            
-            tokenizer = AutoTokenizer.from_pretrained(model_name)
-            model = AutoModelForCausalLM.from_pretrained(
-                model_name,
-                quantization_config=quantization_config,
-                device_map="auto",
-                trust_remote_code=True
-            )
-            
-            self.tokenizers["qwen3-1.7b"] = tokenizer
-            self.models["qwen3-1.7b"] = model
-            
-            logger.info("Qwen3-1.7B model loaded successfully")
-            return True
-            
+            response = requests.get(f"{self.ollama_url}/api/tags", timeout=5)
+            return response.status_code == 200
         except Exception as e:
-            logger.error(f"Failed to load Qwen3 model: {e}")
+            logger.error(f"Ollama connection failed: {e}")
             return False
     
+    def load_qwen3_model(self):
+        """Load Qwen3 model via Ollama (placeholder - using gemma3 as primary)"""
+        # Since we're using gemma3:4b-it-q4_K_M as primary, this is a placeholder
+        logger.info("Using gemma3:4b-it-q4_K_M as primary model instead of Qwen3")
+        return self.load_medgemma_model()
+    
     def load_medgemma_model(self):
-        """Load MedGemma-4B-IT-GGUF model using llama-cpp-python"""
+        """Load gemma3:4b-it-q4_K_M model via Ollama"""
         try:
-            if not GGUF_AVAILABLE:
-                logger.error("llama-cpp-python not available, cannot load GGUF model")
+            if not self.check_ollama_connection():
+                logger.error("Ollama is not running. Please start Ollama first.")
+                return False
+            
+            # Check if model is already available
+            model_name = self.default_model
+            
+            # Try to pull the model if it's not available
+            try:
+                pull_response = requests.post(
+                    f"{self.ollama_url}/api/pull",
+                    json={"name": model_name},
+                    timeout=300  # 5 minutes timeout for model download
+                )
+                
+                if pull_response.status_code == 200:
+                    logger.info(f"Model {model_name} pulled successfully")
+                else:
+                    logger.warning(f"Model pull returned status {pull_response.status_code}")
+                    
+            except requests.exceptions.Timeout:
+                logger.warning("Model pull timed out, but model might already be available")
+            except Exception as e:
+                logger.warning(f"Model pull failed: {e}, attempting to use existing model")
+            
+            # Test if model works
+            test_response = self.generate_response("medgemma-4b", "Hello")
+            if test_response and "error" not in test_response.lower():
+                self.loaded_models.add("medgemma-4b")
+                logger.info(f"Model {model_name} loaded and tested successfully")
+                return True
+            else:
+                logger.error(f"Model {model_name} test failed")
                 return False
                 
-            # Using the actual MedGemma-4B-IT-GGUF model as requested
-            model_name = "SandLogicTechnologies/MedGemma-4B-IT-GGUF"
-            
-            # Download the GGUF file from Hugging Face
-            from huggingface_hub import hf_hub_download
-            
-            # Download the GGUF model file
-            model_path = hf_hub_download(
-                repo_id=model_name,
-                filename="medgemma-4b-it.Q4_K_M.gguf",  # Common GGUF filename pattern
-                cache_dir="./models"
-            )
-            
-            # Load the GGUF model with llama-cpp-python
-            model = Llama(
-                model_path=model_path,
-                n_ctx=4096,  # Context window
-                n_threads=4,  # Number of threads
-                n_gpu_layers=32 if torch.cuda.is_available() else 0,  # GPU acceleration
-                verbose=False
-            )
-            
-            self.models["medgemma-4b"] = model
-            # GGUF models don't use separate tokenizers
-            self.tokenizers["medgemma-4b"] = None
-            
-            logger.info("MedGemma-4B-IT-GGUF model loaded successfully")
-            return True
-            
         except Exception as e:
-            logger.error(f"Failed to load MedGemma-4B-IT-GGUF model: {e}")
-            # Fallback to a standard medical model if GGUF fails
-            logger.info("Falling back to BioGPT-Large...")
-            return self._load_biogpt_fallback()
-            
-    def _load_biogpt_fallback(self):
-        """Fallback to BioGPT if GGUF loading fails"""
-        try:
-            model_name = "microsoft/BioGPT-Large"
-            
-            quantization_config = BitsAndBytesConfig(
-                load_in_4bit=True,
-                bnb_4bit_quant_type="nf4",
-                bnb_4bit_compute_dtype=torch.float16,
-                bnb_4bit_use_double_quant=True
-            )
-            
-            tokenizer = AutoTokenizer.from_pretrained(model_name)
-            model = AutoModelForCausalLM.from_pretrained(
-                model_name,
-                quantization_config=quantization_config,
-                device_map="auto",
-                trust_remote_code=True
-            )
-            
-            self.tokenizers["medgemma-4b"] = tokenizer
-            self.models["medgemma-4b"] = model
-            
-            logger.info("BioGPT-Large fallback model loaded successfully")
-            return True
-            
-        except Exception as e:
-            logger.error(f"Failed to load fallback model: {e}")
+            logger.error(f"Failed to load model via Ollama: {e}")
             return False
     
     def generate_response(self, model_name: str, prompt: str, max_length: int = 512) -> str:
-        """Generate response using specified model (supports both GGUF and standard models)"""
-        if model_name not in self.models:
-            return f"Model {model_name} not loaded"
-        
+        """Generate response using Ollama"""
         try:
-            model = self.models[model_name]
-            tokenizer = self.tokenizers[model_name]
+            if not self.check_ollama_connection():
+                return "Ollama connection failed. Please ensure Ollama is running."
             
-            # Create medical context prompt
+            # Create medical context prompt for medical model
             if model_name == "medgemma-4b":
                 system_prompt = "You are a medical AI assistant. Provide accurate, evidence-based medical information. Always include appropriate disclaimers."
                 full_prompt = f"System: {system_prompt}\nUser: {prompt}\nAssistant:"
             else:
-                full_prompt = f"User: {prompt}\nAssistant:"
+                full_prompt = prompt
             
-            # Handle GGUF models (llama-cpp-python)
-            if isinstance(model, Llama) if GGUF_AVAILABLE else False:
-                response = model(
-                    full_prompt,
-                    max_tokens=max_length,
-                    temperature=0.7,
-                    top_p=0.9,
-                    stop=["User:", "\n\n"],
-                    echo=False
-                )
-                return response['choices'][0]['text'].strip()
+            # Make request to Ollama
+            response = requests.post(
+                f"{self.ollama_url}/api/generate",
+                json={
+                    "model": self.default_model,
+                    "prompt": full_prompt,
+                    "stream": False,
+                    "options": {
+                        "temperature": 0.7,
+                        "top_p": 0.9,
+                        "num_predict": max_length
+                    }
+                },
+                timeout=60
+            )
             
-            # Handle standard transformers models
+            if response.status_code == 200:
+                result = response.json()
+                return result.get("response", "No response generated").strip()
             else:
-                inputs = tokenizer.encode(full_prompt, return_tensors="pt").to(model.device)
-                
-                with torch.no_grad():
-                    outputs = model.generate(
-                        inputs,
-                        max_length=max_length,
-                        temperature=0.7,
-                        do_sample=True,
-                        top_p=0.9,
-                        pad_token_id=tokenizer.eos_token_id
-                    )
-                
-                response = tokenizer.decode(outputs[0], skip_special_tokens=True)
-                # Extract only the assistant's response
-                response = response.split("Assistant:")[-1].strip()
-                return response
+                logger.error(f"Ollama API error: {response.status_code}")
+                return f"Error: Ollama API returned status {response.status_code}"
             
         except Exception as e:
             logger.error(f"Error generating response: {e}")
             return "Sorry, I encountered an error while processing your request."
     
     def is_model_loaded(self, model_name: str) -> bool:
-        """Check if model is loaded"""
-        return model_name in self.models
+        """Check if model is loaded in Ollama"""
+        return model_name in self.loaded_models
     
     def get_model_info(self) -> Dict[str, Any]:
         """Get information about loaded models"""
-        return {
-            "device": self.device,
-            "loaded_models": list(self.models.keys()),
-            "cuda_available": torch.cuda.is_available(),
-            "gpu_memory": torch.cuda.get_device_properties(0).total_memory if torch.cuda.is_available() else None
-        }
+        try:
+            if self.check_ollama_connection():
+                response = requests.get(f"{self.ollama_url}/api/tags")
+                if response.status_code == 200:
+                    models_data = response.json()
+                    available_models = [model["name"] for model in models_data.get("models", [])]
+                else:
+                    available_models = []
+            else:
+                available_models = []
+                
+            return {
+                "ollama_url": self.ollama_url,
+                "ollama_connected": self.check_ollama_connection(),
+                "loaded_models": list(self.loaded_models),
+                "available_models": available_models,
+                "default_model": self.default_model
+            }
+        except Exception as e:
+            logger.error(f"Error getting model info: {e}")
+            return {
+                "ollama_url": self.ollama_url,
+                "ollama_connected": False,
+                "loaded_models": [],
+                "available_models": [],
+                "default_model": self.default_model,
+                "error": str(e)
+            }
 
-# Global model manager instance
+# Global model manager instance - will be initialized with settings in main.py
 model_manager = ModelManager()
+
+def initialize_model_manager(ollama_url: str = "http://localhost:11434"):
+    """Initialize the model manager with configuration"""
+    global model_manager
+    model_manager = ModelManager(ollama_url)

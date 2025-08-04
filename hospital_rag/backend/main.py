@@ -22,12 +22,12 @@ sys.path.append(str(Path(__file__).parent.parent))
 from config.settings import settings, MEDICAL_DISCLAIMERS, MEDICAL_COMMANDS
 from backend.simple_data_processor import SimpleHospitalDataProcessor
 try:
-    from backend.model_loader import model_manager
+    from backend.model_loader import model_manager, initialize_model_manager
 except ImportError:
     # Fallback to mock model loader if dependencies missing
     import sys
     sys.path.append(str(Path(__file__).parent.parent.parent))
-    from temp_model_loader import model_manager
+    from temp_model_loader import model_manager, initialize_model_manager
 
 # Configure logging
 logging.basicConfig(
@@ -55,7 +55,7 @@ app.add_middleware(
 # Pydantic models
 class ChatMessage(BaseModel):
     message: str
-    model: str = "qwen3-1.7b"
+    model: str = "medgemma-4b"
     include_sources: bool = True
     max_sources: int = 5
 
@@ -82,19 +82,12 @@ class HospitalQuery(BaseModel):
 # Global variables for models and data
 hospital_documents = []
 mock_models = {
-    "qwen3-1.7b": {
-        "name": "qwen3-1.7b",
-        "display_name": "Qwen3-1.7B",
-        "description": "Fast and efficient general-purpose model",
-        "status": "ready",
-        "parameters": "1.7B"
-    },
     "medgemma-4b": {
         "name": "medgemma-4b", 
-        "display_name": "MedGemma-4B",
-        "description": "Medical domain specialized model",
+        "display_name": "Gemma3-4B Medical",
+        "description": "Medical domain specialized model via Ollama (gemma3:4b-it-q4_K_M)",
         "status": "ready",
-        "parameters": "4B (4-bit quantized)"
+        "parameters": "4B (4-bit quantized via Ollama)"
     }
 }
 
@@ -143,17 +136,22 @@ async def startup_event():
         logger.error(f"Error loading hospital data: {e}")
         hospital_documents = []
     
-    # Load AI models - Updated to load MedGemma-4B-IT-GGUF as primary model
-    logger.info("Loading AI models...")
+    # Initialize and load AI models via Ollama
+    logger.info("Initializing Ollama model manager...")
     try:
-        # Load MedGemma-4B-IT-GGUF as primary medical model
-        model_manager.load_medgemma_model()
-        # Optionally load Qwen3 as backup (commented out to save resources)
-        # model_manager.load_qwen3_model()
-        logger.info("MedGemma-4B-IT-GGUF model loaded successfully")
+        # Initialize model manager with Ollama URL from settings
+        initialize_model_manager(settings.OLLAMA_URL)
+        logger.info(f"Model manager initialized with Ollama URL: {settings.OLLAMA_URL}")
+        
+        # Load gemma3:4b-it-q4_K_M via Ollama
+        success = model_manager.load_medgemma_model()
+        if success:
+            logger.info("Gemma3:4b-it-q4_K_M model loaded successfully via Ollama")
+        else:
+            logger.warning("Failed to load model via Ollama, will use fallback responses")
     except Exception as e:
-        logger.error(f"Error loading AI models: {e}")
-        logger.info("Falling back to mock responses")
+        logger.error(f"Error loading AI models via Ollama: {e}")
+        logger.info("Falling back to mock responses - ensure Ollama is running")
     
     logger.info("Hospital RAG System started successfully")
 
@@ -186,19 +184,17 @@ async def get_available_models():
 
 @app.post("/api/models/load/{model_name}")
 async def load_model(model_name: str):
-    """Load a specific AI model"""
+    """Load a specific AI model via Ollama"""
     try:
-        if model_name == "qwen3-1.7b":
-            success = model_manager.load_qwen3_model()
-        elif model_name == "medgemma-4b":
+        if model_name == "medgemma-4b":
             success = model_manager.load_medgemma_model()
         else:
-            raise HTTPException(status_code=400, detail=f"Unknown model: {model_name}")
+            raise HTTPException(status_code=400, detail=f"Unknown model: {model_name}. Only 'medgemma-4b' is supported.")
         
         if success:
-            return {"message": f"Model {model_name} loaded successfully", "status": "loaded"}
+            return {"message": f"Model {model_name} (gemma3:4b-it-q4_K_M) loaded successfully via Ollama", "status": "loaded"}
         else:
-            return {"message": f"Failed to load model {model_name}", "status": "failed"}
+            return {"message": f"Failed to load model {model_name}. Ensure Ollama is running and gemma3:4b-it-q4_K_M is available.", "status": "failed"}
             
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -615,21 +611,21 @@ def generate_medical_response(query: str, docs: List[Dict]) -> str:
         return response
 
 def generate_general_response(query: str, docs: List[Dict]) -> str:
-    """Generate response using general model (Qwen3 or simulation)"""
+    """Generate response using medical model (fallback to simulation if not available)"""
     if not docs:
-        if model_manager.is_model_loaded("qwen3-1.7b"):
+        if model_manager.is_model_loaded("medgemma-4b"):
             prompt = f"Please provide general information about: {query}"
-            return model_manager.generate_response("qwen3-1.7b", prompt)
+            return model_manager.generate_response("medgemma-4b", prompt)
         else:
             return "I couldn't find specific information about that in the hospital database. Could you please rephrase your query or try a different search term?"
     
     # Use real model if loaded, otherwise simulate
-    if model_manager.is_model_loaded("qwen3-1.7b"):
+    if model_manager.is_model_loaded("medgemma-4b"):
         context = "\n".join([doc["content"][:300] for doc in docs[:3]])
         prompt = f"Based on the following hospital database information, please provide a helpful response to the query '{query}':\n\nDatabase Information:\n{context}\n\nPlease summarize the key information in a clear, helpful way."
-        return model_manager.generate_response("qwen3-1.7b", prompt)
+        return model_manager.generate_response("medgemma-4b", prompt)
     else:
-        # Simulate general model response
+        # Simulate model response
         response = f"I found the following information in the hospital database:\n\n"
         
         for i, doc in enumerate(docs[:3]):

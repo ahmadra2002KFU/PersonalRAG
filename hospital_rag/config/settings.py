@@ -22,14 +22,13 @@ class Settings(BaseSettings):
     PORT: int = 8000
     WORKERS: int = 1
     
-    # Model Configuration - Updated to use MedGemma as primary model
-    MODELS_DIR: Path = Path("./models")
-    DEFAULT_MODEL: str = "medgemma-4b"  # Changed to use MedGemma-4B-IT-GGUF as primary
-    AVAILABLE_MODELS: List[str] = ["medgemma-4b", "qwen3-1.7b"]  # Reordered priority
+    # Ollama Configuration
+    OLLAMA_URL: str = "http://localhost:11434"
+    DEFAULT_MODEL: str = "medgemma-4b"  # Maps to gemma3:4b-it-q4_K_M in Ollama
+    AVAILABLE_MODELS: List[str] = ["medgemma-4b"]  # Using Ollama gemma3:4b-it-q4_K_M
     
-    # Model Paths - Updated to use MedGemma-4B-IT-GGUF as primary model
-    QWEN3_MODEL_PATH: str = "Qwen/Qwen3-1.7B"  # Backup model
-    MEDGEMMA_MODEL_PATH: str = "SandLogicTechnologies/MedGemma-4B-IT-GGUF"  # Primary medical model
+    # Ollama Model Configuration
+    OLLAMA_MODEL_NAME: str = "gemma3:4b-it-q4_K_M"  # Actual Ollama model name
     
     # RAG Configuration - Updated to use RAGFlow-compatible embedding models
     VECTOR_DB_TYPE: str = "chromadb"  # chromadb, qdrant, or faiss
