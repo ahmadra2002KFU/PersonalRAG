@@ -1,0 +1,70 @@
+Dashboard_Category,KPI_Name,Current_Value,Benchmark_Value,Unit,Trend_7_Days,Trend_30_Days,Department,Priority_Level,Action_Required,Last_Updated
+Patient_Flow,Average_Length_of_Stay,4.2,3.8,days,+0.3,+0.4,Hospital Wide,High,Discharge Planning Review,2025-08-04
+Patient_Flow,Bed_Turnover_Rate,1.8,2.1,per_day,-0.2,-0.1,Hospital Wide,Medium,Process Improvement,2025-08-04
+Patient_Flow,Emergency_Door_to_Provider,23,20,minutes,+2,+3,Emergency,High,Staffing Review,2025-08-04
+Patient_Flow,Surgery_On_Time_Start,78.5,85.0,percentage,-3.2,-1.8,Surgery,Medium,Scheduling Optimization,2025-08-04
+Patient_Flow,ICU_Admission_Wait,45,30,minutes,+8,+12,ICU,High,Capacity Management,2025-08-04
+Patient_Flow,Discharge_Before_Noon,35.2,50.0,percentage,-2.1,-5.3,Hospital Wide,Medium,Morning Rounds Review,2025-08-04
+Patient_Flow,Elective_Surgery_Cancellation,8.7,5.0,percentage,+1.2,+0.8,Surgery,Medium,Pre-op Process Review,2025-08-04
+Clinical_Quality,Hospital_Standardized_Mortality,0.89,0.85,ratio,+0.02,+0.01,Hospital Wide,High,Mortality Review Committee,2025-08-04
+Clinical_Quality,Central_Line_Infection_Rate,1.2,0.8,per_1000_days,+0.1,+0.2,ICU,High,Infection Prevention Protocol,2025-08-04
+Clinical_Quality,Ventilator_Associated_Pneumonia,2.1,1.5,per_1000_days,+0.3,+0.4,ICU,High,VAP Bundle Compliance,2025-08-04
+Clinical_Quality,Surgical_Site_Infection,1.5,1.2,percentage,+0.1,+0.2,Surgery,Medium,Antibiotic Prophylaxis Review,2025-08-04
+Clinical_Quality,Medication_Reconciliation,87.5,95.0,percentage,-1.2,-2.8,Pharmacy,Medium,Process Training,2025-08-04
+Clinical_Quality,Hand_Hygiene_Compliance,92.3,95.0,percentage,+0.8,+1.2,Hospital Wide,Medium,Education Campaign,2025-08-04
+Clinical_Quality,Core_Measures_Compliance,89.7,95.0,percentage,-0.5,-1.3,Quality,Medium,Protocol Review,2025-08-04
+Financial_Performance,Operating_Margin,12.8,15.0,percentage,-0.8,-1.2,Finance,High,Cost Reduction Initiative,2025-08-04
+Financial_Performance,Revenue_Per_Discharge,18750,19500,USD,-250,-180,Finance,Medium,Revenue Cycle Review,2025-08-04
+Financial_Performance,Days_in_AR,42,35,days,+2,+3,Finance,High,Collection Process Review,2025-08-04
+Financial_Performance,Case_Mix_Index,1.67,1.70,index,-0.01,-0.02,Finance,Medium,Documentation Improvement,2025-08-04
+Financial_Performance,Denial_Rate,12.3,8.0,percentage,+0.8,+1.1,Finance,High,Prior Authorization Process,2025-08-04
+Financial_Performance,Cost_Per_RVU,58.2,55.0,USD,+1.8,+2.1,Finance,Medium,Productivity Analysis,2025-08-04
+Financial_Performance,Supply_Cost_Per_Discharge,2890,2650,USD,+85,+120,Supply Chain,Medium,Contract Renegotiation,2025-08-04
+Staff_Performance,Nurse_Turnover_Rate,18.5,12.0,percentage,+1.2,+2.3,Nursing,High,Retention Program,2025-08-04
+Staff_Performance,Physician_Satisfaction,3.8,4.2,score_out_of_5,-0.1,-0.2,Medical Staff,Medium,Engagement Survey,2025-08-04
+Staff_Performance,RN_Hours_Per_Patient_Day,8.2,7.8,hours,+0.3,+0.2,Nursing,Medium,Staffing Model Review,2025-08-04
+Staff_Performance,Overtime_Percentage,14.8,10.0,percentage,+1.8,+2.2,HR,High,Scheduling Optimization,2025-08-04
+Staff_Performance,Agency_Staff_Usage,12.3,8.0,percentage,+2.1,+1.8,HR,High,Recruitment Initiative,2025-08-04
+Staff_Performance,Training_Completion_Rate,89.2,95.0,percentage,-1.2,-2.1,Education,Medium,Mandatory Training Review,2025-08-04
+Staff_Performance,Employee_Engagement,3.6,4.0,score_out_of_5,-0.1,-0.3,HR,Medium,Culture Initiative,2025-08-04
+Patient_Experience,HCAHPS_Overall_Rating,4.1,4.5,score_out_of_5,-0.1,-0.2,Patient Experience,High,Service Recovery Training,2025-08-04
+Patient_Experience,Communication_with_Nurses,4.3,4.6,score_out_of_5,0.0,-0.1,Nursing,Medium,Communication Training,2025-08-04
+Patient_Experience,Communication_with_Doctors,4.2,4.5,score_out_of_5,-0.1,-0.2,Medical Staff,Medium,Bedside Manner Training,2025-08-04
+Patient_Experience,Pain_Management,3.9,4.3,score_out_of_5,-0.2,-0.3,Clinical,High,Pain Protocol Review,2025-08-04
+Patient_Experience,Discharge_Information,4.0,4.4,score_out_of_5,-0.1,-0.2,Nursing,Medium,Discharge Education Review,2025-08-04
+Patient_Experience,Cleanliness,4.4,4.6,score_out_of_5,+0.1,+0.0,Environmental Services,Low,Maintain Standards,2025-08-04
+Patient_Experience,Noise_Level,3.7,4.1,score_out_of_5,-0.2,-0.3,Hospital Wide,Medium,Noise Reduction Program,2025-08-04
+Operational_Efficiency,Equipment_Uptime,94.2,96.0,percentage,-0.8,-1.2,Biomedical,Medium,Preventive Maintenance Review,2025-08-04
+Operational_Efficiency,OR_Utilization,78.5,85.0,percentage,-2.1,-3.2,Surgery,High,Block Schedule Review,2025-08-04
+Operational_Efficiency,Lab_Turnaround_Time,35,30,minutes,+3,+5,Laboratory,Medium,Workflow Optimization,2025-08-04
+Operational_Efficiency,Radiology_Report_Time,2.1,1.8,hours,+0.2,+0.3,Radiology,Medium,Radiologist Productivity,2025-08-04
+Operational_Efficiency,Pharmacy_Turnaround,28,25,minutes,+2,+3,Pharmacy,Medium,Medication Delivery Review,2025-08-04
+Operational_Efficiency,Environmental_Service_Time,35,30,minutes,+3,+2,Environmental Services,Medium,Cleaning Protocol Review,2025-08-04
+Operational_Efficiency,Transport_Response_Time,8.2,7.0,minutes,+0.8,+1.2,Transport,Medium,Staffing Analysis,2025-08-04
+Safety_Metrics,Patient_Falls_Rate,2.3,2.0,per_1000_days,+0.2,+0.1,Nursing,High,Fall Prevention Protocol,2025-08-04
+Safety_Metrics,Workplace_Injuries,4.2,3.0,per_100_FTE,+0.8,+1.0,Safety,High,Safety Training Program,2025-08-04
+Safety_Metrics,Sentinel_Events,1,0,count,0,+1,Quality,Critical,Root Cause Analysis,2025-08-04
+Safety_Metrics,Code_Blue_Response,2.8,3.0,minutes,-0.1,-0.2,Emergency Response,Medium,Maintain Performance,2025-08-04
+Safety_Metrics,Fire_Drill_Compliance,95.8,100.0,percentage,-2.1,-1.2,Safety,Medium,Staff Training,2025-08-04
+Safety_Metrics,Security_Incidents,3,2,count,+1,+1,Security,Medium,Security Protocol Review,2025-08-04
+Safety_Metrics,Medication_Errors,0.8,0.5,per_1000_doses,+0.1,+0.2,Pharmacy,High,Medication Safety Review,2025-08-04
+Technology_Performance,EMR_Downtime,0.8,0.5,percentage,+0.2,+0.1,IT,High,System Redundancy Review,2025-08-04
+Technology_Performance,Help_Desk_Response,89.2,95.0,percentage,-2.1,-3.2,IT,Medium,Service Level Review,2025-08-04
+Technology_Performance,Network_Performance,96.8,98.0,percentage,-0.5,-0.8,IT,Medium,Infrastructure Upgrade,2025-08-04
+Technology_Performance,Cybersecurity_Score,87,90,score,+1,+2,IT,Medium,Security Assessment,2025-08-04
+Technology_Performance,Data_Backup_Success,98.7,99.5,percentage,-0.2,-0.5,IT,Medium,Backup Process Review,2025-08-04
+Technology_Performance,PACS_Availability,98.9,99.5,percentage,-0.1,-0.3,IT,Medium,System Monitoring,2025-08-04
+Technology_Performance,Telemedicine_Uptime,97.2,98.5,percentage,-0.8,-1.1,IT,Medium,Platform Stability Review,2025-08-04
+Sustainability,Energy_Consumption,2.8,2.5,kWh_per_sq_ft,+0.1,+0.2,Facilities,Medium,Energy Efficiency Program,2025-08-04
+Sustainability,Water_Usage,185,170,gallons_per_bed,+8,+12,Facilities,Medium,Conservation Initiative,2025-08-04
+Sustainability,Waste_Reduction,67.2,75.0,percentage,-2.1,-3.8,Environmental,Medium,Recycling Program,2025-08-04
+Sustainability,Carbon_Footprint,2.1,1.8,tons_CO2_per_bed,+0.1,+0.2,Facilities,Medium,Green Initiative,2025-08-04
+Research_Education,Clinical_Trials_Enrollment,145,200,patients,-8,-15,Research,Medium,Recruitment Strategy,2025-08-04
+Research_Education,Medical_Students,28,30,count,-1,-2,Medical Education,Low,Rotation Scheduling,2025-08-04
+Research_Education,Nursing_Students,42,45,count,-2,-3,Nursing Education,Low,Clinical Placement,2025-08-04
+Research_Education,Publications,18,25,count,-1,-4,Research,Medium,Publication Support,2025-08-04
+Research_Education,Grant_Funding,2.8,3.5,millions_USD,-0.2,-0.5,Research,Medium,Grant Writing Support,2025-08-04
+Community_Health,Emergency_Preparedness_Score,92,95,score,+1,+2,Emergency Management,Medium,Drill Compliance,2025-08-04
+Community_Health,Public_Health_Screenings,156,200,count,-12,-18,Community Health,Medium,Outreach Program,2025-08-04
+Community_Health,Health_Education_Programs,8,12,programs,-1,-2,Community Health,Medium,Program Development,2025-08-04
+Community_Health,Charity_Care_Percentage,8.2,10.0,percentage,-0.3,-0.8,Finance,Medium,Community Benefit Review,2025-08-04

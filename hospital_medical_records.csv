@@ -1,0 +1,101 @@
+Record_ID,Patient_ID,Doctor_ID,Date,Diagnosis,Treatment,Medications,Lab_Results,Vital_Signs,Procedures,Notes,Follow_up_Date
+MR0001,P0164,D0004,2024-08-16,Osteoarthritis,Joint injection,Ibuprofen 600mg TID,LDL: 180 mg/dL,BP: 150/95 HR: 110,X-ray imaging,Symptoms resolved,
+MR0002,P0174,D0018,2024-09-17,Cellulitis,Antibiotic therapy,Cephalexin 500mg QID,Creatinine: 1.2 mg/dL,BP: 90/60 HR: 120,Wound culture,Pain improving,2024-10-20
+MR0003,P0130,D0020,2024-08-17,Hypothyroidism,Thyroid hormone replacement,Levothyroxine 100mcg daily,H. pylori positive,BP: 130/80 HR: 70,TSH monitoring,Pain improving,
+MR0004,P0115,D0019,2024-12-24,Acute Myocardial Infarction,Cardiac catheterization with stent,Aspirin 81mg daily,ESR: 25 mm/hr,BP: 100/65 HR: 85,Coronary angioplasty,Psychiatric referral made,2025-02-12
+MR0005,P0040,D0007,2025-01-23,Pneumonia,Antibiotic therapy,Azithromycin 500mg,WBC: 12000,BP: 100/65 HR: 85,Chest X-ray,Fetal development normal,
+MR0006,P0155,D0009,2024-08-26,Anxiety Disorder,Anxiolytic therapy,Lorazepam 0.5mg PRN,Creatinine: 1.2 mg/dL,BP: 115/70 HR: 95,Mental status exam,Nephrology consult needed,2024-11-12
+MR0007,P0161,D0020,2025-02-05,Cellulitis,Antibiotic therapy,Cephalexin 500mg QID,Creatinine: 1.2 mg/dL,BP: 140/90 HR: 95,Wound culture,Good glycemic control,
+MR0008,P0059,D0010,2024-09-13,Chronic Kidney Disease,ACE inhibitor therapy,Enalapril 5mg BID,Hemoglobin: 10.5 g/dL,BP: 120/75 HR: 74,Renal ultrasound,Adjuvant therapy planned,2024-11-30
+MR0009,P0094,D0006,2025-02-09,Migraine Headache,Triptan therapy,Sumatriptan 50mg PRN,Hemoglobin: 10.5 g/dL,BP: 150/95 HR: 110,Neurological exam,Good glycemic control,
+MR0010,P0166,D0003,2025-06-11,Breast Cancer Stage II,Chemotherapy,Doxorubicin protocol,INR: 2.3,BP: 120/75 HR: 74,Mammography and biopsy,Trigger identification needed,2025-08-11
+MR0011,P0070,D0018,2024-11-24,Acute Bronchitis,Bronchodilators,Albuterol inhaler,BUN: 25 mg/dL,BP: 120/80 HR: irregular,Chest examination,Diet counseling provided,2024-12-31
+MR0012,P0081,D0013,2024-12-19,Hypertension,Antihypertensive therapy,Lisinopril 10mg daily,CBC normal,BP: 110/70 HR: 85,EKG monitoring,Pain management plan established,
+MR0013,P0081,D0007,2025-07-05,Herniated Disc,Conservative treatment,Naproxen 500mg BID,LDH: elevated,BP: 135/85 HR: 78,MRI spine,Psychiatric referral made,2025-10-25
+MR0014,P0036,D0008,2025-05-18,Hypothyroidism,Thyroid hormone replacement,Levothyroxine 100mcg daily,CBC normal,BP: 130/80 HR: 70,TSH monitoring,No significant injuries,
+MR0015,P0103,D0012,2024-11-24,Atrial Fibrillation,Anticoagulation,Warfarin 5mg daily,HbA1c: 8.2%,BP: 120/80 HR: irregular,Holter monitor,Symptoms resolved,2025-01-04
+MR0016,P0040,D0006,2025-07-18,Hyperlipidemia,Statin therapy,Atorvastatin 40mg daily,eGFR: 45 mL/min,BP: 125/78 HR: 82,Lipid panel,Full recovery achieved,2025-10-05
+MR0017,P0136,D0009,2025-05-14,Acute Myocardial Infarction,Cardiac catheterization with stent,Aspirin 81mg daily,H. pylori positive,BP: 145/90 HR: 68,Coronary angioplasty,Psychiatric referral made,2025-06-27
+MR0018,P0197,D0011,2024-09-30,Major Depression,Antidepressant therapy,Sertraline 50mg daily,Troponin: 15.2 ng/mL,BP: 150/95 HR: 110,PHQ-9 assessment,Rehabilitation ongoing,2024-12-27
+MR0019,P0068,D0017,2024-11-03,Asthma,Inhaled corticosteroids,Fluticasone 110mcg BID,Platelet count: 150000,BP: 120/80 HR: irregular,Pulmonary function test,Adjuvant therapy planned,2025-02-21
+MR0020,P0130,D0020,2024-11-13,Atrial Fibrillation,Anticoagulation,Warfarin 5mg daily,H. pylori positive,BP: 145/90 HR: 68,Holter monitor,All parameters normal,2025-01-02
+MR0021,P0001,D0020,2025-01-16,Herniated Disc,Conservative treatment,Naproxen 500mg BID,CA 15-3: elevated,BP: 110/70 HR: 85,MRI spine,Nephrology consult needed,
+MR0022,P0062,D0002,2024-12-05,Cellulitis,Antibiotic therapy,Cephalexin 500mg QID,Thyroid function normal,BP: 120/80 HR: irregular,Wound culture,Blood pressure controlled,2025-01-14
+MR0023,P0195,D0018,2024-10-07,Atrial Fibrillation,Anticoagulation,Warfarin 5mg daily,INR: 2.3,BP: 160/95 HR: 72,Holter monitor,All parameters normal,2025-01-15
+MR0024,P0156,D0014,2024-11-20,Hypothyroidism,Thyroid hormone replacement,Levothyroxine 100mcg daily,Glucose: 180 mg/dL,BP: 150/95 HR: 110,TSH monitoring,Nephrology consult needed,2025-03-18
+MR0025,P0103,D0012,2025-03-16,Asthma,Inhaled corticosteroids,Fluticasone 110mcg BID,BUN: 25 mg/dL,BP: 110/70 HR: 88,Pulmonary function test,Rate controlled,2025-05-16
+MR0026,P0006,D0019,2025-05-14,Chronic Kidney Disease,ACE inhibitor therapy,Enalapril 5mg BID,Creatinine: 1.2 mg/dL,BP: 150/95 HR: 110,Renal ultrasound,Adjuvant therapy planned,2025-06-13
+MR0027,P0016,D0008,2024-09-07,Type 2 Diabetes Mellitus,Lifestyle modification,Metformin 500mg BID,Drug screen negative,BP: 90/60 HR: 120,Blood glucose monitoring,Psychiatric referral made,2024-10-16
+MR0028,P0172,D0016,2024-11-21,Hypothyroidism,Thyroid hormone replacement,Levothyroxine 100mcg daily,CBC normal,BP: 125/78 HR: 82,TSH monitoring,Rehabilitation started,
+MR0029,P0063,D0016,2025-02-28,GERD,Proton pump inhibitor,Omeprazole 20mg daily,ESR: 25 mm/hr,BP: 100/65 HR: 85,Upper endoscopy,Therapy sessions started,
+MR0030,P0106,D0015,2024-08-31,Pneumonia,Antibiotic therapy,Azithromycin 500mg,Procalcitonin: 2.1,BP: 145/90 HR: 68,Chest X-ray,Symptoms resolved,
+MR0031,P0064,D0007,2024-11-09,Hypothyroidism,Thyroid hormone replacement,Levothyroxine 100mcg daily,INR: 2.3,BP: 160/95 HR: 72,TSH monitoring,Full recovery achieved,2025-02-01
+MR0032,P0064,D0003,2025-03-18,Hypothyroidism,Thyroid hormone replacement,Levothyroxine 100mcg daily,H. pylori positive,BP: 120/80 HR: irregular,TSH monitoring,Patient stable post-procedure,
+MR0033,P0024,D0008,2024-10-28,Hyperlipidemia,Statin therapy,Atorvastatin 40mg daily,eGFR: 45 mL/min,BP: 110/70 HR: 85,Lipid panel,Diet counseling provided,2024-12-24
+MR0034,P0043,D0013,2024-08-05,Peptic Ulcer Disease,PPI therapy,Lansoprazole 30mg daily,LDH: elevated,BP: 160/95 HR: 72,Upper endoscopy,Therapy sessions started,
+MR0035,P0179,D0018,2025-07-08,Herniated Disc,Conservative treatment,Naproxen 500mg BID,Platelet count: 150000,BP: 90/60 HR: 120,MRI spine,Diet counseling provided,
+MR0036,P0149,D0018,2024-09-04,Acute Bronchitis,Bronchodilators,Albuterol inhaler,CBC normal,BP: 120/75 HR: 74,Chest examination,All parameters normal,
+MR0037,P0136,D0006,2024-09-02,Asthma,Inhaled corticosteroids,Fluticasone 110mcg BID,INR: 2.3,BP: 110/70 HR: 88,Pulmonary function test,Device functioning well,
+MR0038,P0018,D0008,2025-02-26,Pneumonia,Antibiotic therapy,Azithromycin 500mg,BUN: 25 mg/dL,BP: 125/78 HR: 82,Chest X-ray,Device functioning well,2025-06-08
+MR0039,P0011,D0020,2024-09-14,Hyperlipidemia,Statin therapy,Atorvastatin 40mg daily,Drug screen negative,BP: 100/65 HR: 85,Lipid panel,Psychiatric referral made,2024-12-25
+MR0040,P0053,D0011,2024-12-04,Osteoarthritis,Joint injection,Ibuprofen 600mg TID,Platelet count: 150000,BP: 120/75 HR: 74,X-ray imaging,Rate controlled,2025-03-29
+MR0041,P0193,D0003,2024-08-08,Anxiety Disorder,Anxiolytic therapy,Lorazepam 0.5mg PRN,WBC: 12000,BP: 110/70 HR: 88,Mental status exam,Ulcer healing well,2024-11-18
+MR0042,P0055,D0017,2024-12-17,Atrial Fibrillation,Anticoagulation,Warfarin 5mg daily,BUN: 25 mg/dL,BP: 100/65 HR: 85,Holter monitor,Nephrology consult needed,2025-01-24
+MR0043,P0041,D0015,2025-05-09,Major Depression,Antidepressant therapy,Sertraline 50mg daily,Drug screen negative,BP: 140/90 HR: 95,PHQ-9 assessment,Good glycemic control,2025-08-30
+MR0044,P0142,D0010,2025-07-09,Pneumonia,Antibiotic therapy,Azithromycin 500mg,Hemoglobin: 10.5 g/dL,BP: 110/70 HR: 88,Chest X-ray,Symptoms resolved,2025-08-25
+MR0045,P0191,D0018,2024-10-22,Osteoarthritis,Joint injection,Ibuprofen 600mg TID,Glucose: 180 mg/dL,BP: 150/95 HR: 110,X-ray imaging,Rate controlled,
+MR0046,P0053,D0009,2025-04-19,Herniated Disc,Conservative treatment,Naproxen 500mg BID,HbA1c: 8.2%,BP: 110/70 HR: 88,MRI spine,Adjuvant therapy planned,
+MR0047,P0109,D0009,2024-08-26,Acute Myocardial Infarction,Cardiac catheterization with stent,Aspirin 81mg daily,Hemoglobin: 10.5 g/dL,BP: 135/85 HR: 78,Coronary angioplasty,Rehabilitation ongoing,2024-10-11
+MR0048,P0114,D0018,2025-07-31,Hyperlipidemia,Statin therapy,Atorvastatin 40mg daily,Creatinine: 1.2 mg/dL,BP: 110/70 HR: 85,Lipid panel,Pain management plan established,2025-09-13
+MR0049,P0039,D0018,2024-08-22,Migraine Headache,Triptan therapy,Sumatriptan 50mg PRN,ESR: 25 mm/hr,BP: 135/85 HR: 78,Neurological exam,Diet counseling provided,2024-10-09
+MR0050,P0079,D0012,2024-08-24,Migraine Headache,Triptan therapy,Sumatriptan 50mg PRN,BUN: 25 mg/dL,BP: 140/88 HR: 76,Neurological exam,Symptoms resolved,
+MR0051,P0091,D0018,2025-02-28,Iron Deficiency Anemia,Iron supplementation,Ferrous sulfate 325mg TID,INR: 2.3,BP: 145/90 HR: 68,CBC monitoring,Complete recovery,2025-04-29
+MR0052,P0106,D0001,2024-11-03,Acute Bronchitis,Bronchodilators,Albuterol inhaler,BUN: 25 mg/dL,BP: 160/95 HR: 72,Chest examination,Complete recovery,2025-01-24
+MR0053,P0180,D0004,2025-02-15,Type 2 Diabetes Mellitus,Lifestyle modification,Metformin 500mg BID,Glucose: 180 mg/dL,BP: 120/80 HR: irregular,Blood glucose monitoring,Full recovery achieved,2025-04-14
+MR0054,P0090,D0010,2024-11-28,Chronic Kidney Disease,ACE inhibitor therapy,Enalapril 5mg BID,Glucose: 180 mg/dL,BP: 130/80 HR: 70,Renal ultrasound,Rate controlled,
+MR0055,P0072,D0003,2024-12-24,Migraine Headache,Triptan therapy,Sumatriptan 50mg PRN,H. pylori positive,BP: 100/65 HR: 85,Neurological exam,Patient stable post-procedure,2025-03-15
+MR0056,P0030,D0009,2024-11-03,Cellulitis,Antibiotic therapy,Cephalexin 500mg QID,HbA1c: 8.2%,BP: 110/70 HR: 88,Wound culture,Device functioning well,2025-01-05
+MR0057,P0112,D0012,2025-01-11,Hyperlipidemia,Statin therapy,Atorvastatin 40mg daily,WBC: 12000,BP: 130/80 HR: 70,Lipid panel,No significant injuries,2025-04-16
+MR0058,P0049,D0009,2024-08-26,Hyperlipidemia,Statin therapy,Atorvastatin 40mg daily,H. pylori positive,BP: 140/88 HR: 76,Lipid panel,Rehabilitation ongoing,
+MR0059,P0190,D0007,2025-02-06,Hyperlipidemia,Statin therapy,Atorvastatin 40mg daily,Procalcitonin: 2.1,BP: 125/78 HR: 82,Lipid panel,Rate controlled,
+MR0060,P0170,D0004,2025-01-04,Asthma,Inhaled corticosteroids,Fluticasone 110mcg BID,Procalcitonin: 2.1,BP: 130/80 HR: 70,Pulmonary function test,Pain management plan established,2025-03-27
+MR0061,P0076,D0018,2024-10-08,GERD,Proton pump inhibitor,Omeprazole 20mg daily,INR: 2.3,BP: 125/78 HR: 82,Upper endoscopy,No significant injuries,2024-12-25
+MR0062,P0078,D0013,2025-05-11,Acute Myocardial Infarction,Cardiac catheterization with stent,Aspirin 81mg daily,ESR: 25 mm/hr,BP: 145/90 HR: 68,Coronary angioplasty,No significant injuries,2025-07-06
+MR0063,P0156,D0011,2025-03-30,Anxiety Disorder,Anxiolytic therapy,Lorazepam 0.5mg PRN,Drug screen negative,BP: 120/75 HR: 74,Mental status exam,Rehabilitation ongoing,2025-05-26
+MR0064,P0044,D0003,2024-12-27,Asthma,Inhaled corticosteroids,Fluticasone 110mcg BID,Procalcitonin: 2.1,BP: 110/70 HR: 88,Pulmonary function test,Crisis intervention provided,2025-04-15
+MR0065,P0061,D0010,2024-11-27,GERD,Proton pump inhibitor,Omeprazole 20mg daily,HbA1c: 8.2%,BP: 90/60 HR: 120,Upper endoscopy,Rehabilitation started,
+MR0066,P0157,D0003,2025-03-25,Hyperlipidemia,Statin therapy,Atorvastatin 40mg daily,Glucose: 180 mg/dL,BP: 150/95 HR: 110,Lipid panel,Pain management plan established,2025-07-06
+MR0067,P0099,D0016,2025-02-24,Chronic Kidney Disease,ACE inhibitor therapy,Enalapril 5mg BID,Troponin: 15.2 ng/mL,BP: 110/70 HR: 85,Renal ultrasound,Crisis intervention provided,
+MR0068,P0198,D0004,2025-03-09,Chronic Kidney Disease,ACE inhibitor therapy,Enalapril 5mg BID,Drug screen negative,BP: 120/75 HR: 74,Renal ultrasound,Diet counseling provided,
+MR0069,P0143,D0008,2024-10-05,Anxiety Disorder,Anxiolytic therapy,Lorazepam 0.5mg PRN,LDH: elevated,BP: 140/88 HR: 76,Mental status exam,All parameters normal,
+MR0070,P0144,D0020,2025-01-13,Anxiety Disorder,Anxiolytic therapy,Lorazepam 0.5mg PRN,ESR: 25 mm/hr,BP: 120/80 HR: irregular,Mental status exam,Ulcer healing well,2025-04-17
+MR0071,P0115,D0006,2025-04-04,Anxiety Disorder,Anxiolytic therapy,Lorazepam 0.5mg PRN,BUN: 25 mg/dL,BP: 120/80 HR: irregular,Mental status exam,Adjuvant therapy planned,
+MR0072,P0071,D0017,2025-04-09,Chronic Kidney Disease,ACE inhibitor therapy,Enalapril 5mg BID,Creatinine: 1.2 mg/dL,BP: 150/95 HR: 110,Renal ultrasound,Nephrology consult needed,
+MR0073,P0061,D0009,2025-01-22,Acute Bronchitis,Bronchodilators,Albuterol inhaler,LDL: 180 mg/dL,BP: 135/85 HR: 78,Chest examination,Pain improving,2025-03-03
+MR0074,P0099,D0005,2025-07-31,GERD,Proton pump inhibitor,Omeprazole 20mg daily,ESR: 25 mm/hr,BP: 100/65 HR: 85,Upper endoscopy,Ulcer healing well,
+MR0075,P0120,D0014,2024-09-04,GERD,Proton pump inhibitor,Omeprazole 20mg daily,CBC normal,BP: 150/95 HR: 110,Upper endoscopy,Patient stable post-procedure,2024-11-22
+MR0076,P0196,D0019,2025-02-14,Herniated Disc,Conservative treatment,Naproxen 500mg BID,CA 15-3: elevated,BP: 160/95 HR: 72,MRI spine,Crisis intervention provided,
+MR0077,P0100,D0014,2025-05-06,Hypothyroidism,Thyroid hormone replacement,Levothyroxine 100mcg daily,Thyroid function normal,BP: 90/60 HR: 120,TSH monitoring,Psychiatric referral made,2025-07-03
+MR0078,P0112,D0016,2024-08-18,Peptic Ulcer Disease,PPI therapy,Lansoprazole 30mg daily,eGFR: 45 mL/min,BP: 150/95 HR: 110,Upper endoscopy,Complete recovery,2024-12-12
+MR0079,P0120,D0005,2025-06-18,Hypothyroidism,Thyroid hormone replacement,Levothyroxine 100mcg daily,eGFR: 45 mL/min,BP: 125/78 HR: 82,TSH monitoring,No significant injuries,
+MR0080,P0170,D0001,2024-09-15,Hyperlipidemia,Statin therapy,Atorvastatin 40mg daily,LDH: elevated,BP: 135/85 HR: 78,Lipid panel,Diet counseling provided,
+MR0081,P0067,D0013,2025-01-18,GERD,Proton pump inhibitor,Omeprazole 20mg daily,eGFR: 45 mL/min,BP: 160/95 HR: 72,Upper endoscopy,Crisis intervention provided,2025-04-01
+MR0082,P0108,D0009,2024-09-14,Herniated Disc,Conservative treatment,Naproxen 500mg BID,H. pylori positive,BP: 140/90 HR: 95,MRI spine,Fetal development normal,
+MR0083,P0058,D0003,2025-07-03,Type 2 Diabetes Mellitus,Lifestyle modification,Metformin 500mg BID,Glucose: 180 mg/dL,BP: 120/80 HR: irregular,Blood glucose monitoring,Patient stable post-procedure,2025-09-02
+MR0084,P0160,D0005,2024-12-04,Atrial Fibrillation,Anticoagulation,Warfarin 5mg daily,CBC normal,BP: 90/60 HR: 120,Holter monitor,Full recovery achieved,2025-01-17
+MR0085,P0180,D0009,2025-02-08,Breast Cancer Stage II,Chemotherapy,Doxorubicin protocol,INR: 2.3,BP: 160/95 HR: 72,Mammography and biopsy,Symptoms resolved,2025-03-24
+MR0086,P0149,D0001,2025-01-10,Cellulitis,Antibiotic therapy,Cephalexin 500mg QID,eGFR: 45 mL/min,BP: 150/95 HR: 110,Wound culture,Treatment plan established,2025-03-29
+MR0087,P0020,D0019,2025-07-23,Chronic Kidney Disease,ACE inhibitor therapy,Enalapril 5mg BID,Platelet count: 150000,BP: 120/80 HR: irregular,Renal ultrasound,Good glycemic control,
+MR0088,P0154,D0004,2025-05-20,Type 2 Diabetes Mellitus,Lifestyle modification,Metformin 500mg BID,CA 15-3: elevated,BP: 110/70 HR: 88,Blood glucose monitoring,All parameters normal,2025-08-12
+MR0089,P0166,D0011,2024-08-10,Hyperlipidemia,Statin therapy,Atorvastatin 40mg daily,ESR: 25 mm/hr,BP: 100/65 HR: 85,Lipid panel,Adjuvant therapy planned,2024-09-22
+MR0090,P0118,D0005,2025-03-14,Breast Cancer Stage II,Chemotherapy,Doxorubicin protocol,Hemoglobin: 10.5 g/dL,BP: 125/78 HR: 82,Mammography and biopsy,Ulcer healing well,2025-07-05
+MR0091,P0199,D0016,2025-03-30,Hyperlipidemia,Statin therapy,Atorvastatin 40mg daily,Hemoglobin: 10.5 g/dL,BP: 100/65 HR: 85,Lipid panel,Pain improving,2025-07-13
+MR0092,P0023,D0009,2025-03-22,Chronic Kidney Disease,ACE inhibitor therapy,Enalapril 5mg BID,Lipid panel normal,BP: 140/88 HR: 76,Renal ultrasound,Trigger identification needed,2025-07-02
+MR0093,P0087,D0001,2025-04-14,Acute Bronchitis,Bronchodilators,Albuterol inhaler,Glucose: 180 mg/dL,BP: 100/65 HR: 85,Chest examination,Psychiatric referral made,
+MR0094,P0088,D0009,2025-06-05,Osteoarthritis,Joint injection,Ibuprofen 600mg TID,Glucose: 180 mg/dL,BP: 110/70 HR: 88,X-ray imaging,Pain improving,2025-09-09
+MR0095,P0185,D0014,2025-04-11,Hypothyroidism,Thyroid hormone replacement,Levothyroxine 100mcg daily,Thyroid function normal,BP: 140/88 HR: 76,TSH monitoring,Pain management plan established,2025-08-07
+MR0096,P0126,D0015,2024-08-12,Hypertension,Antihypertensive therapy,Lisinopril 10mg daily,eGFR: 45 mL/min,BP: 150/95 HR: 110,EKG monitoring,Pain improving,
+MR0097,P0079,D0019,2025-02-08,Herniated Disc,Conservative treatment,Naproxen 500mg BID,ESR: 25 mm/hr,BP: 150/95 HR: 110,MRI spine,Ulcer healing well,2025-04-23
+MR0098,P0085,D0012,2025-07-29,Anxiety Disorder,Anxiolytic therapy,Lorazepam 0.5mg PRN,Hemoglobin: 10.5 g/dL,BP: 90/60 HR: 120,Mental status exam,Symptoms resolved,
+MR0099,P0185,D0007,2025-01-12,Pneumonia,Antibiotic therapy,Azithromycin 500mg,INR: 2.3,BP: 90/60 HR: 120,Chest X-ray,Treatment plan established,2025-05-10
+MR0100,P0190,D0016,2024-12-23,Cellulitis,Antibiotic therapy,Cephalexin 500mg QID,Lipid panel normal,BP: 160/95 HR: 72,Wound culture,Symptoms resolved,2025-03-30

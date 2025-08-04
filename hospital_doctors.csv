@@ -1,0 +1,31 @@
+Doctor_ID,First_Name,Last_Name,Specialty,Department,License_Number,Phone,Email,Years_Experience,Education,Availability,Shift_Schedule,Salary,Employee_Status
+D0001,Robert,Thompson,Cardiology,Cardiology,MD123456,(555) 111-2222,r.thompson@hospital.com,15,Harvard Medical School,Available,Day Shift,285000,Full-time
+D0002,Sarah,Mitchell,Emergency Medicine,Emergency,MD234567,(555) 222-3333,s.mitchell@hospital.com,8,Johns Hopkins,Available,Night Shift,245000,Full-time
+D0003,Michael,Chen,Neurosurgery,Neurology,MD345678,(555) 333-4444,m.chen@hospital.com,20,Stanford Medical,On Call,Rotating,420000,Full-time
+D0004,Lisa,Rodriguez,Pediatrics,Pediatrics,MD456789,(555) 444-5555,l.rodriguez@hospital.com,12,UCLA Medical,Available,Day Shift,220000,Full-time
+D0005,David,Kumar,Orthopedics,Orthopedics,MD567890,(555) 555-6666,d.kumar@hospital.com,18,Mayo Clinic,Unavailable,Day Shift,315000,Full-time
+D0006,Jennifer,Adams,Radiology,Radiology,MD678901,(555) 666-7777,j.adams@hospital.com,10,Yale Medical,Available,Evening Shift,275000,Full-time
+D0007,James,Wilson,Internal Medicine,Internal Medicine,MD789012,(555) 777-8888,j.wilson@hospital.com,25,Duke Medical,Available,Day Shift,195000,Full-time
+D0008,Emily,Brown,Anesthesiology,Surgery,MD890123,(555) 888-9999,e.brown@hospital.com,14,UCSF Medical,On Call,Rotating,320000,Full-time
+D0009,Daniel,Garcia,Gastroenterology,Gastroenterology,MD901234,(555) 999-0000,d.garcia@hospital.com,16,Northwestern,Available,Day Shift,285000,Full-time
+D0010,Amanda,Taylor,Dermatology,Dermatology,MD012345,(555) 000-1111,a.taylor@hospital.com,9,Emory Medical,Available,Day Shift,265000,Part-time
+D0011,Christopher,Lee,Oncology,Oncology,MD123457,(555) 111-2223,c.lee@hospital.com,22,MD Anderson,Available,Day Shift,365000,Full-time
+D0012,Jessica,Martinez,Psychiatry,Psychiatry,MD234568,(555) 222-3334,j.martinez@hospital.com,13,Columbia Medical,Available,Day Shift,210000,Full-time
+D0013,Matthew,Johnson,Urology,Urology,MD345679,(555) 333-4445,m.johnson@hospital.com,17,Cleveland Clinic,On Call,Rotating,295000,Full-time
+D0014,Ashley,Davis,Obstetrics,Obstetrics,MD456780,(555) 444-5556,a.davis@hospital.com,11,Vanderbilt Medical,Available,Day Shift,235000,Full-time
+D0015,Ryan,Anderson,Pulmonology,Pulmonology,MD567891,(555) 555-6667,r.anderson@hospital.com,19,University of Michigan,Available,Day Shift,275000,Full-time
+D0016,Michelle,White,Pathology,Laboratory,MD678902,(555) 666-7778,m.white@hospital.com,7,Washington University,Available,Day Shift,255000,Full-time
+D0017,Kevin,Thompson,Emergency Medicine,Emergency,MD789013,(555) 777-8889,k.thompson@hospital.com,6,Baylor Medical,Available,Night Shift,235000,Full-time
+D0018,Rachel,Harris,Endocrinology,Endocrinology,MD890124,(555) 888-0000,r.harris@hospital.com,14,University of Pennsylvania,Available,Day Shift,265000,Full-time
+D0019,Brian,Clark,Orthopedics,Orthopedics,MD901235,(555) 999-1111,b.clark@hospital.com,21,Mayo Clinic,Available,Day Shift,325000,Full-time
+D0020,Stephanie,Lewis,Family Medicine,Family Medicine,MD012346,(555) 000-2222,s.lewis@hospital.com,8,University of Texas,Available,Day Shift,185000,Full-time
+N0001,Maria,Gonzalez,Registered Nurse,Emergency,RN123456,(555) 111-3333,m.gonzalez@hospital.com,12,BSN - UT Austin,Available,Night Shift,85000,Full-time
+N0002,Laura,Robinson,Charge Nurse,ICU,RN234567,(555) 222-4444,l.robinson@hospital.com,18,MSN - Emory,Available,Day Shift,95000,Full-time
+N0003,Patricia,Walker,Clinical Nurse,Cardiology,RN345678,(555) 333-5555,p.walker@hospital.com,15,BSN - UCLA,Available,Day Shift,78000,Full-time
+N0004,Linda,Hall,OR Nurse,Surgery,RN456789,(555) 444-6666,l.hall@hospital.com,20,BSN - Johns Hopkins,On Call,Rotating,88000,Full-time
+N0005,Nancy,Allen,Pediatric Nurse,Pediatrics,RN567890,(555) 555-7777,n.allen@hospital.com,10,BSN - Duke,Available,Day Shift,75000,Full-time
+T0001,Mark,Young,Lab Technician,Laboratory,LT123456,(555) 666-8888,m.young@hospital.com,8,BS Medical Technology,Available,Day Shift,52000,Full-time
+T0002,Carol,King,Radiology Tech,Radiology,RT234567,(555) 777-9999,c.king@hospital.com,12,AS Radiologic Technology,Available,Evening Shift,58000,Full-time
+T0003,Steven,Wright,Respiratory Therapist,Pulmonology,RT345678,(555) 888-0001,s.wright@hospital.com,6,BS Respiratory Therapy,Available,Night Shift,65000,Full-time
+T0004,Helen,Scott,Physical Therapist,Rehabilitation,PT456789,(555) 999-1112,h.scott@hospital.com,14,DPT - Northwestern,Available,Day Shift,72000,Full-time
+A0001,Sharon,Green,Administrator,Administration,ADM12345,(555) 000-3333,s.green@hospital.com,25,MBA - Wharton,Available,Day Shift,125000,Full-time

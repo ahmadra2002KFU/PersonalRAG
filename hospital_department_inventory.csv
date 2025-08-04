@@ -1,0 +1,83 @@
+Department,Room_Number,Room_Type,Equipment_Category,Equipment_Name,Model,Quantity,Status,Last_Inspection,Next_Inspection,Responsible_Staff,Maintenance_Due,Critical_Level
+Emergency,ER-001,Trauma Bay,Monitoring,Cardiac Monitor,IntelliVue MX450,1,Operational,2025-07-15,2025-10-15,Nurse Johnson,2025-09-10,High
+Emergency,ER-001,Trauma Bay,Life Support,Defibrillator,LIFEPAK 15,1,Operational,2025-07-20,2025-10-20,Dr. Mitchell,2025-08-15,Critical
+Emergency,ER-001,Trauma Bay,Life Support,Ventilator,Oxylog 3000 Plus,1,Operational,2025-07-10,2025-10-10,RT Williams,2025-09-05,Critical
+Emergency,ER-001,Trauma Bay,Diagnostic,Portable X-Ray,DRX-Revolution Nano,1,Available,2025-06-30,2025-09-30,Tech Martinez,2025-08-25,High
+Emergency,ER-002,Trauma Bay,Monitoring,Cardiac Monitor,IntelliVue MX450,1,Operational,2025-07-18,2025-10-18,Nurse Davis,2025-09-12,High
+Emergency,ER-002,Trauma Bay,Life Support,Defibrillator,LIFEPAK 15,1,Operational,2025-07-22,2025-10-22,Dr. Mitchell,2025-08-18,Critical
+Emergency,ER-003,Treatment Room,Monitoring,Vital Signs Monitor,Dinamap Pro 400,1,Operational,2025-07-05,2025-10-05,Nurse Thompson,2025-08-30,Medium
+Emergency,ER-004,Treatment Room,Monitoring,Vital Signs Monitor,Dinamap Pro 400,1,Operational,2025-07-12,2025-10-12,Nurse Anderson,2025-09-02,Medium
+Emergency,ER-005,Treatment Room,Diagnostic,EKG Machine,MAC 2000,1,Operational,2025-06-28,2025-09-28,Tech Roberts,2025-08-20,Medium
+Emergency,ER-006,Treatment Room,Diagnostic,EKG Machine,MAC 2000,1,Operational,2025-07-03,2025-10-03,Tech Roberts,2025-08-22,Medium
+Emergency,ER-Central,Supply Area,Emergency,Crash Cart,Standard Code Cart,3,Ready,2025-07-25,2025-08-25,Nurse Manager,2025-08-15,Critical
+Emergency,ER-Central,Supply Area,Life Support,AED,LIFEPAK CR2,5,Ready,2025-07-20,2025-10-20,Safety Officer,2025-09-15,Critical
+Emergency,Triage,Assessment Area,Monitoring,Triage Monitor,Spot Vital Signs,2,Operational,2025-07-08,2025-10-08,Triage Nurse,2025-08-28,Medium
+ICU,ICU-001,Critical Care,Life Support,Ventilator,Servo-i,1,Operational,2025-07-30,2025-08-30,RT Johnson,2025-08-15,Critical
+ICU,ICU-001,Critical Care,Monitoring,Patient Monitor,IntelliVue MX800,1,Operational,2025-07-28,2025-10-28,Nurse Williams,2025-09-20,Critical
+ICU,ICU-001,Critical Care,Life Support,Infusion Pump,Alaris GP,4,Operational,2025-07-25,2025-10-25,Nurse Williams,2025-09-10,High
+ICU,ICU-002,Critical Care,Life Support,Ventilator,Servo-i,1,Operational,2025-08-01,2025-09-01,RT Johnson,2025-08-20,Critical
+ICU,ICU-002,Critical Care,Monitoring,Patient Monitor,IntelliVue MX800,1,Operational,2025-07-29,2025-10-29,Nurse Davis,2025-09-22,Critical
+ICU,ICU-002,Critical Care,Life Support,Infusion Pump,Alaris GP,4,Operational,2025-07-26,2025-10-26,Nurse Davis,2025-09-12,High
+ICU,ICU-003,Critical Care,Life Support,Ventilator,Servo-i,1,Maintenance,2025-06-15,2025-09-15,RT Johnson,2025-08-10,Critical
+ICU,ICU-003,Critical Care,Monitoring,Patient Monitor,IntelliVue MX800,1,Operational,2025-07-31,2025-10-31,Nurse Thompson,2025-09-25,Critical
+ICU,ICU-Central,Nurses Station,Life Support,Defibrillator,LIFEPAK 15,2,Ready,2025-07-20,2025-10-20,Charge Nurse,2025-08-18,Critical
+ICU,ICU-Central,Supply Area,Diagnostic,Portable X-Ray,DRX-Revolution Nano,1,Available,2025-07-15,2025-10-15,Radiology Tech,2025-09-05,High
+Surgery,OR-001,Operating Room,Anesthesia,Anesthesia Machine,Perseus A500,1,Operational,2025-07-28,2025-08-28,Dr. Brown,2025-08-20,Critical
+Surgery,OR-001,Operating Room,Monitoring,Patient Monitor,IntelliVue MX800,1,Operational,2025-07-30,2025-10-30,OR Nurse,2025-09-25,Critical
+Surgery,OR-001,Operating Room,Surgical,Electrosurgical Unit,ForceTriad,1,Operational,2025-07-22,2025-10-22,OR Tech,2025-09-15,High
+Surgery,OR-001,Operating Room,Surgical,Surgical Lights,Pentaled 42,2,Operational,2025-07-25,2025-10-25,Facilities,2025-09-20,High
+Surgery,OR-002,Operating Room,Anesthesia,Anesthesia Machine,Perseus A500,1,Operational,2025-07-29,2025-08-29,Dr. Brown,2025-08-22,Critical
+Surgery,OR-002,Operating Room,Surgical,Operating Table,Alphamaxx,1,Operational,2025-07-18,2025-10-18,OR Tech,2025-09-10,High
+Surgery,OR-002,Operating Room,Imaging,C-Arm X-Ray,OEC 9900 Elite,1,Operational,2025-07-20,2025-10-20,Radiology Tech,2025-09-12,High
+Surgery,OR-003,Operating Room,Anesthesia,Anesthesia Machine,Perseus A500,1,Operational,2025-07-31,2025-08-31,Dr. Brown,2025-08-25,Critical
+Surgery,OR-003,Operating Room,Surgical,Operating Table,Alphamaxx,1,Maintenance,2025-06-30,2025-09-30,OR Tech,2025-08-15,High
+Surgery,OR-004,Operating Room,Robotic,Surgical Robot,da Vinci Xi,1,Operational,2025-07-15,2025-10-15,Robot Specialist,2025-09-01,Critical
+Surgery,OR-Recovery,Recovery Bay,Monitoring,Patient Monitor,IntelliVue MX450,8,Operational,2025-07-10,2025-10-10,Recovery Nurse,2025-09-05,High
+Surgery,OR-Recovery,Recovery Bay,Life Support,Infusion Pump,Alaris GP,12,Operational,2025-07-12,2025-10-12,Recovery Nurse,2025-09-08,High
+Surgery,Sterilization,Processing,Sterilization,Steam Sterilizer,V-PRO 1 Plus,2,Operational,2025-07-25,2025-08-25,Sterile Tech,2025-08-20,Critical
+Surgery,Sterilization,Processing,Sterilization,ETO Sterilizer,Steri-Vac 5XL,1,Operational,2025-07-28,2025-08-28,Sterile Tech,2025-08-22,Critical
+Radiology,RAD-MRI1,MRI Suite,Imaging,MRI Machine,Magnetom Vida 3T,1,Operational,2025-07-20,2025-10-20,MRI Tech,2025-09-15,Critical
+Radiology,RAD-MRI2,MRI Suite,Imaging,MRI Machine,Magnetom Aera 1.5T,1,Operational,2025-07-22,2025-10-22,MRI Tech,2025-09-18,Critical
+Radiology,RAD-CT1,CT Suite,Imaging,CT Scanner,Revolution Apex,1,Operational,2025-07-25,2025-10-25,CT Tech,2025-09-20,Critical
+Radiology,RAD-XR1,X-Ray Room,Imaging,Digital X-Ray,DRX-Revolution,1,Operational,2025-07-18,2025-10-18,X-Ray Tech,2025-09-12,High
+Radiology,RAD-XR2,X-Ray Room,Imaging,Digital X-Ray,DRX-Revolution,1,Operational,2025-07-19,2025-10-19,X-Ray Tech,2025-09-14,High
+Radiology,RAD-MAMMO,Mammography,Imaging,Mammography Unit,Senographe Pristina,1,Operational,2025-07-30,2025-10-30,Mammo Tech,2025-09-25,High
+Radiology,RAD-US1,Ultrasound Room,Imaging,Ultrasound System,EPIQ Elite,1,Operational,2025-07-15,2025-10-15,US Tech,2025-09-10,High
+Radiology,RAD-US2,Ultrasound Room,Imaging,Ultrasound Portable,Lumify,2,Operational,2025-07-12,2025-10-12,US Tech,2025-09-08,Medium
+Laboratory,LAB-CHEM,Chemistry Lab,Analysis,Chemistry Analyzer,DxH 900,1,Operational,2025-07-28,2025-08-28,Lab Tech,2025-08-20,Critical
+Laboratory,LAB-HEME,Hematology Lab,Analysis,Hematology Analyzer,XN-2000,1,Operational,2025-07-30,2025-08-30,Lab Tech,2025-08-25,Critical
+Laboratory,LAB-MICRO,Microbiology Lab,Analysis,Microscope,DM2500,3,Operational,2025-07-20,2025-10-20,Microbiologist,2025-09-15,High
+Laboratory,LAB-STAT,STAT Lab,Analysis,Blood Gas Analyzer,ABL90 FLEX,1,Operational,2025-08-01,2025-09-01,Lab Tech,2025-08-28,Critical
+Laboratory,LAB-BLOOD,Blood Bank,Storage,Blood Bank Refrigerator,HMR Series,2,Operational,2025-07-25,2025-08-25,Blood Bank Tech,2025-08-18,Critical
+Laboratory,LAB-BLOOD,Blood Bank,Storage,Plasma Freezer,TSX Series,1,Operational,2025-07-22,2025-08-22,Blood Bank Tech,2025-08-15,Critical
+Cardiology,CARD-ECHO,Echo Lab,Diagnostic,Ultrasound System,EPIQ Elite,1,Operational,2025-07-18,2025-10-18,Echo Tech,2025-09-12,High
+Cardiology,CARD-CATH,Cath Lab,Interventional,C-Arm System,Innova IGS 630,1,Operational,2025-07-25,2025-10-25,Cath Tech,2025-09-20,Critical
+Cardiology,CARD-STRESS,Stress Lab,Diagnostic,Stress Test System,Case Exercise Testing,1,Operational,2025-07-15,2025-10-15,Stress Tech,2025-09-10,High
+Cardiology,CARD-WARD,Cardio Ward,Monitoring,Telemetry Monitor,IntelliVue MX40,20,Operational,2025-07-20,2025-10-20,Cardio Nurse,2025-09-15,High
+Pediatrics,PEDS-001,Patient Room,Monitoring,Pediatric Monitor,IntelliVue MX450,1,Operational,2025-07-12,2025-10-12,Peds Nurse,2025-09-08,High
+Pediatrics,PEDS-002,Patient Room,Monitoring,Pediatric Monitor,IntelliVue MX450,1,Operational,2025-07-14,2025-10-14,Peds Nurse,2025-09-10,High
+Pediatrics,NICU,Intensive Care,Life Support,Infant Ventilator,Babylog VN600,4,Operational,2025-07-30,2025-08-30,NICU Nurse,2025-08-25,Critical
+Pediatrics,NICU,Intensive Care,Life Support,Syringe Pump,Alaris CC,8,Operational,2025-07-28,2025-10-28,NICU Nurse,2025-09-22,Critical
+Pediatrics,NICU,Intensive Care,Monitoring,NICU Monitor,IntelliVue MX800,4,Operational,2025-07-25,2025-10-25,NICU Nurse,2025-09-20,Critical
+Obstetrics,OB-L&D1,Labor Room,Monitoring,Fetal Monitor,Avalon FM50,1,Operational,2025-07-20,2025-10-20,OB Nurse,2025-09-15,High
+Obstetrics,OB-L&D2,Labor Room,Monitoring,Fetal Monitor,Avalon FM50,1,Operational,2025-07-22,2025-10-22,OB Nurse,2025-09-18,High
+Obstetrics,OB-OR,Delivery Room,Monitoring,Patient Monitor,IntelliVue MX800,1,Operational,2025-07-25,2025-10-25,OB Nurse,2025-09-20,Critical
+Obstetrics,OB-US,Ultrasound Room,Imaging,Ultrasound OB/GYN,Voluson E10,1,Operational,2025-07-18,2025-10-18,US Tech,2025-09-12,High
+Nephrology,DIALYSIS-1,Dialysis Bay,Treatment,Hemodialysis Machine,2008K,6,Operational,2025-07-30,2025-08-30,Dialysis Tech,2025-08-25,Critical
+Nephrology,DIALYSIS-2,Dialysis Bay,Treatment,Hemodialysis Machine,2008K,6,Operational,2025-08-01,2025-09-01,Dialysis Tech,2025-08-28,Critical
+Nephrology,PD-SUITE,PD Room,Treatment,Peritoneal Dialysis,Liberty Cycler,2,Operational,2025-07-25,2025-10-25,PD Nurse,2025-09-20,High
+Pulmonology,SLEEP-LAB,Sleep Study,Monitoring,Sleep Study System,Alice 6 LDx,4,Operational,2025-07-15,2025-10-15,Sleep Tech,2025-09-10,High
+Pulmonology,PFT-LAB,Pulmonary Function,Diagnostic,Spirometry System,Vmax Encore,2,Operational,2025-07-20,2025-10-20,PFT Tech,2025-09-15,High
+Pulmonology,RESP-THER,Respiratory Therapy,Treatment,CPAP Machine,V60,8,Operational,2025-07-18,2025-10-18,Respiratory Therapist,2025-09-12,High
+Pulmonology,RESP-THER,Respiratory Therapy,Treatment,Nebulizer,Pari LC Plus,25,Operational,2025-07-22,2025-10-22,Respiratory Therapist,2025-09-18,Medium
+Pharmacy,PHARM-PREP,Preparation Area,Dispensing,Automated Dispensing,Pyxis MedStation,5,Operational,2025-07-25,2025-08-25,Pharmacist,2025-08-20,Critical
+Pharmacy,PHARM-IV,IV Room,Preparation,Laminar Flow Hood,Baker SterilGARD,2,Operational,2025-07-28,2025-08-28,IV Pharmacist,2025-08-22,Critical
+Pharmacy,PHARM-CHEMO,Chemo Prep,Preparation,Biological Safety Cabinet,NuAire LabGard,1,Operational,2025-07-30,2025-08-30,Oncology Pharmacist,2025-08-25,Critical
+Physical_Therapy,PT-GYM,Therapy Gym,Rehabilitation,Parallel Bars,Bailey Manufacturing,2,Operational,2025-07-10,2025-10-10,Physical Therapist,2025-09-05,Medium
+Physical_Therapy,PT-GYM,Therapy Gym,Rehabilitation,Exercise Bike,HUR,4,Operational,2025-07-12,2025-10-12,Physical Therapist,2025-09-08,Medium
+Physical_Therapy,PT-GYM,Therapy Gym,Rehabilitation,Treadmill,HUR,2,Operational,2025-07-15,2025-10-15,Physical Therapist,2025-09-10,Medium
+Physical_Therapy,PT-GYM,Therapy Gym,Treatment,Ultrasound Therapy,Intelect Legend XT,3,Operational,2025-07-18,2025-10-18,Physical Therapist,2025-09-12,Medium
+Facilities,POWER,Electrical Room,Infrastructure,Emergency Generator,Caterpillar 3516C,2,Operational,2025-07-01,2025-08-01,Facilities Engineer,2025-08-15,Critical
+Facilities,HVAC,Mechanical Room,Infrastructure,HVAC System,Carrier AquaEdge,4,Operational,2025-07-05,2025-08-05,HVAC Tech,2025-08-10,Critical
+Facilities,WATER,Utility Room,Infrastructure,Water Treatment,Culligan,1,Operational,2025-07-15,2025-08-15,Facilities Tech,2025-08-20,High
+Facilities,ELEVATOR,Elevator Bank,Transportation,Patient Elevator,Otis Gen2,6,Operational,2025-07-20,2025-08-20,Elevator Tech,2025-08-25,High

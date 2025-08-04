@@ -1,0 +1,86 @@
+Metric_Category,Metric_Name,Current_Value,Target_Value,Unit,Department,Last_Updated,Trend_Direction,Notes
+Bed_Management,Total_Licensed_Beds,450,450,beds,Hospital Wide,2025-08-04,Stable,Full capacity licensed
+Bed_Management,Available_Beds,67,75,beds,Hospital Wide,2025-08-04,Decreasing,Peak summer occupancy
+Bed_Management,Occupied_Beds,383,375,beds,Hospital Wide,2025-08-04,Increasing,85.1% occupancy rate
+Bed_Management,Emergency_Beds_Total,25,25,beds,Emergency,2025-08-04,Stable,8 trauma bays included
+Bed_Management,Emergency_Beds_Available,8,10,beds,Emergency,2025-08-04,Decreasing,High ED volume
+Bed_Management,ICU_Beds_Total,40,40,beds,ICU,2025-08-04,Stable,Level 1 trauma capability
+Bed_Management,ICU_Beds_Available,12,15,beds,ICU,2025-08-04,Stable,70% occupancy
+Bed_Management,ICU_Beds_Occupied,28,25,beds,ICU,2025-08-04,Increasing,Above target occupancy
+Bed_Management,Surgery_Beds_Total,30,30,beds,Surgery,2025-08-04,Stable,Post-operative recovery
+Bed_Management,Surgery_Beds_Available,8,12,beds,Surgery,2025-08-04,Decreasing,High surgical volume
+Bed_Management,Pediatric_Beds_Total,45,45,beds,Pediatrics,2025-08-04,Stable,Ages 0-18
+Bed_Management,Pediatric_Beds_Available,18,20,beds,Pediatrics,2025-08-04,Stable,60% occupancy
+Bed_Management,Maternity_Beds_Total,25,25,beds,Maternity,2025-08-04,Stable,Labor and delivery
+Bed_Management,Maternity_Beds_Available,9,10,beds,Maternity,2025-08-04,Stable,64% occupancy
+Bed_Management,Cardiology_Beds_Total,35,35,beds,Cardiology,2025-08-04,Stable,Telemetry monitoring
+Bed_Management,Cardiology_Beds_Available,7,12,beds,Cardiology,2025-08-04,Decreasing,80% occupancy
+Bed_Management,Oncology_Beds_Total,30,30,beds,Oncology,2025-08-04,Stable,Chemotherapy capable
+Bed_Management,Oncology_Beds_Available,11,12,beds,Oncology,2025-08-04,Stable,63% occupancy
+Bed_Management,Orthopedics_Beds_Total,25,25,beds,Orthopedics,2025-08-04,Stable,Joint replacement specialty
+Bed_Management,Orthopedics_Beds_Available,6,8,beds,Orthopedics,2025-08-04,Decreasing,76% occupancy
+Patient_Census,Total_Inpatients,383,375,patients,Hospital Wide,2025-08-04,Increasing,Current census count
+Patient_Census,Emergency_Patients,45,40,patients,Emergency,2025-08-04,Increasing,24-hour volume
+Patient_Census,ICU_Patients,28,25,patients,ICU,2025-08-04,Increasing,Critical care census
+Patient_Census,Surgery_Patients_Today,22,20,patients,Surgery,2025-08-04,Increasing,Scheduled procedures
+Patient_Census,Pediatric_Patients,27,25,patients,Pediatrics,2025-08-04,Increasing,Including NICU
+Patient_Census,Maternity_Patients,16,15,patients,Maternity,2025-08-04,Stable,Labor and postpartum
+Patient_Census,Outpatients_Today,156,150,patients,Hospital Wide,2025-08-04,Increasing,Clinic visits
+Patient_Census,Saudi_Patients,47,45,patients,Hospital Wide,2025-08-04,Stable,International patients
+Patient_Census,Emergency_Saudi_Patients,8,6,patients,Emergency,2025-08-04,Increasing,Urgent care visits
+Staffing,Nurses_On_Duty,185,180,nurses,Hospital Wide,2025-08-04,Stable,All shifts combined
+Staffing,Doctors_On_Duty,42,40,doctors,Hospital Wide,2025-08-04,Stable,Including residents
+Staffing,ICU_Nurses_Ratio,2.5,2.0,patients_per_nurse,ICU,2025-08-04,Increasing,Above optimal ratio
+Staffing,Emergency_Nurses_Ratio,4.2,3.5,patients_per_nurse,Emergency,2025-08-04,Increasing,High patient volume
+Staffing,General_Ward_Nurses_Ratio,6.8,6.0,patients_per_nurse,General Wards,2025-08-04,Increasing,Within acceptable range
+Staffing,Nurse_Vacancy_Rate,12.5,8.0,percentage,Hospital Wide,2025-08-04,Increasing,Recruitment ongoing
+Staffing,Doctor_Vacancy_Rate,5.2,3.0,percentage,Hospital Wide,2025-08-04,Stable,Specialist positions
+Staffing,Overtime_Hours_Week,1245,1000,hours,Hospital Wide,2025-08-04,Increasing,Above target
+Equipment,OR_Utilization,78.5,85.0,percentage,Surgery,2025-08-04,Decreasing,6 operating rooms
+Equipment,MRI_Utilization,89.2,90.0,percentage,Radiology,2025-08-04,Stable,2 MRI machines
+Equipment,CT_Utilization,92.3,88.0,percentage,Radiology,2025-08-04,Increasing,Above capacity
+Equipment,Ventilators_Available,8,12,units,ICU,2025-08-04,Decreasing,Critical care support
+Equipment,Dialysis_Machines_Active,6,8,units,Nephrology,2025-08-04,Stable,Hemodialysis units
+Equipment,Defibrillators_Ready,15,18,units,Hospital Wide,2025-08-04,Stable,Emergency response
+Equipment,Infusion_Pumps_Active,89,95,units,Hospital Wide,2025-08-04,Stable,Patient care equipment
+Equipment,X-Ray_Utilization,76.8,75.0,percentage,Radiology,2025-08-04,Increasing,Diagnostic imaging
+Equipment,Lab_Analyzer_Uptime,96.7,98.0,percentage,Laboratory,2025-08-04,Decreasing,Maintenance needed
+Equipment,Surgical_Robot_Hours,45,50,hours_per_week,Surgery,2025-08-04,Decreasing,da Vinci system
+Quality,Patient_Satisfaction,4.2,4.5,score_out_of_5,Hospital Wide,2025-08-04,Stable,Monthly survey
+Quality,Readmission_Rate,8.7,7.5,percentage,Hospital Wide,2025-08-04,Increasing,30-day readmissions
+Quality,Hospital_Infection_Rate,2.1,1.8,per_1000_days,Hospital Wide,2025-08-04,Stable,HAI prevention
+Quality,Medication_Error_Rate,0.8,0.5,per_1000_doses,Pharmacy,2025-08-04,Stable,Patient safety
+Quality,Fall_Rate,2.3,2.0,per_1000_days,Hospital Wide,2025-08-04,Increasing,Prevention protocols
+Quality,Mortality_Rate,1.2,1.0,percentage,Hospital Wide,2025-08-04,Stable,Risk-adjusted
+Quality,Surgery_Infection_Rate,1.5,1.2,percentage,Surgery,2025-08-04,Stable,SSI prevention
+Quality,Emergency_Wait_Time,23,20,minutes,Emergency,2025-08-04,Increasing,Triage to provider
+Quality,Lab_Turnaround_Time,35,30,minutes,Laboratory,2025-08-04,Increasing,STAT results
+Quality,Radiology_Report_Time,2.1,2.0,hours,Radiology,2025-08-04,Stable,Final reports
+Financial,Daily_Revenue,2845000,2750000,USD,Hospital Wide,2025-08-04,Increasing,Gross revenue
+Financial,Emergency_Revenue_Daily,345000,320000,USD,Emergency,2025-08-04,Increasing,24-hour total
+Financial,Surgery_Revenue_Daily,892000,850000,USD,Surgery,2025-08-04,Increasing,Procedure revenue
+Financial,Pharmacy_Revenue_Daily,156000,150000,USD,Pharmacy,2025-08-04,Stable,Medication sales
+Financial,Lab_Revenue_Daily,98000,95000,USD,Laboratory,2025-08-04,Stable,Test revenue
+Financial,Radiology_Revenue_Daily,234000,220000,USD,Radiology,2025-08-04,Increasing,Imaging studies
+Financial,Bad_Debt_Rate,4.8,4.0,percentage,Finance,2025-08-04,Increasing,Collection issues
+Financial,Insurance_Denial_Rate,12.3,10.0,percentage,Finance,2025-08-04,Increasing,Prior auth required
+Financial,Cost_Per_Admission,8950,8500,USD,Finance,2025-08-04,Increasing,Direct costs
+Financial,Length_of_Stay,4.2,3.8,days,Hospital Wide,2025-08-04,Increasing,Average LOS
+Operations,Emergency_Response_Time,3.2,3.0,minutes,Emergency,2025-08-04,Stable,Code team response
+Operations,Elevator_Uptime,97.8,98.5,percentage,Facilities,2025-08-04,Decreasing,Maintenance needed
+Operations,HVAC_Efficiency,92.1,95.0,percentage,Facilities,2025-08-04,Stable,Climate control
+Operations,Generator_Tests_Passed,12,12,count,Facilities,2025-08-04,Stable,Monthly testing
+Operations,Fire_Safety_Compliance,100,100,percentage,Safety,2025-08-04,Stable,Code compliance
+Operations,Waste_Management,89.5,90.0,percentage,Environmental,2025-08-04,Stable,Proper disposal
+Operations,Water_Quality_Tests,24,24,count,Facilities,2025-08-04,Stable,Monthly testing
+Operations,Security_Incidents,3,2,count,Security,2025-08-04,Increasing,Weekly incidents
+Operations,Parking_Availability,67,75,percentage,Facilities,2025-08-04,Decreasing,Visitor parking
+Operations,Food_Service_Satisfaction,3.8,4.0,score_out_of_5,Nutrition Services,2025-08-04,Stable,Patient meals
+Technology,EMR_Uptime,99.2,99.5,percentage,IT,2025-08-04,Stable,Electronic health records
+Technology,Network_Performance,96.8,98.0,percentage,IT,2025-08-04,Stable,Hospital network
+Technology,PACS_Availability,98.9,99.0,percentage,IT,2025-08-04,Stable,Medical imaging
+Technology,Pharmacy_System_Uptime,97.5,98.5,percentage,IT,2025-08-04,Decreasing,Medication management
+Technology,Lab_System_Uptime,99.1,99.0,percentage,IT,2025-08-04,Stable,Laboratory information
+Technology,Backup_Success_Rate,98.7,99.0,percentage,IT,2025-08-04,Stable,Data protection
+Technology,Cybersecurity_Score,87,90,score_out_of_100,IT,2025-08-04,Stable,Risk assessment
+Technology,Help_Desk_Resolution,89.2,92.0,percentage,IT,2025-08-04,Stable,First call resolution

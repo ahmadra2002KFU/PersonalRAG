@@ -1,0 +1,201 @@
+Patient_ID,First_Name,Last_Name,Date_of_Birth,Gender,Phone,Email,Address,Insurance_Type,Emergency_Contact,Blood_Type,Allergies,Admission_Date,Discharge_Date,Current_Status
+P0001,Brian,Rodriguez,2005-09-15,Male,(854) 204-9935,brian.rodriguez@gmail.com,3757 Pine Rd,Medicare,Parent - (338) 617-1434,A+,None,2024-08-10,2025-07-28,Outpatient
+P0002,Kimberly,Smith,1948-05-04,Female,(384) 259-4527,kimberly.smith@yahoo.com,7024 Maple Ave,Medicare,Sibling - (967) 452-5333,A-,Peanuts,2024-12-12,2025-07-06,Inpatient
+P0003,Melissa,Harris,1970-11-22,Female,(821) 171-1750,melissa.harris@hotmail.com,9559 Elm Dr,Medicaid,Spouse - (489) 384-8428,AB+,None,,,Discharged
+P0004,Nicole,Williams,1969-05-28,Female,(267) 573-7216,nicole.williams@yahoo.com,2903 Elm Dr,Medicare,Parent - (941) 132-6168,AB-,Multiple,,,Emergency
+P0005,Sara,Al-Juaid,1977-02-22,Female,+966 52 371 3287,sara.aljuaid@gmail.com,"Al-Sahafah District, Tabuk",Uninsured,Sibling - +966 53 241 9348,O+,Shellfish,,,Emergency
+P0006,Ali,Al-Ghamdi,1975-02-10,Male,+966 56 490 8668,ali.alghamdi@outlook.com,"Al-Olaya District, Tabuk",International,Spouse - +966 58 868 5371,A+,Latex,,,Discharged
+P0007,Sarah,Rodriguez,1965-09-09,Female,(991) 740-5889,sarah.rodriguez@hotmail.com,3027 Oak Ave,Medicaid,Spouse - (713) 431-9005,B+,Aspirin,2025-06-08,2025-07-07,Inpatient
+P0008,Jennifer,Johnson,1952-07-25,Female,(187) 849-8962,jennifer.johnson@gmail.com,9395 Oak Ave,Uninsured,Parent - (371) 640-7932,B+,Latex,2024-08-16,,Outpatient
+P0009,Michelle,Thomas,1971-04-16,Female,(330) 165-6539,michelle.thomas@gmail.com,2082 Elm Dr,Medicare,Spouse - (334) 169-1514,B-,None,,,Discharged
+P0010,Sara,Al-Saud,1964-03-01,Female,+966 53 903 8749,sara.alsaud@hotmail.com,"Al-Sahafah District, Mecca",International,Child - +966 55 533 7735,A-,None,2025-07-08,2025-07-15,Emergency
+P0011,Thuraya,Al-Shamrani,1955-02-25,Female,+966 53 294 9786,thuraya.alshamrani@hotmail.com,"Al-Rawdah District, Jeddah",Private,Child - +966 53 995 2235,O+,Penicillin,2024-10-27,,Emergency
+P0012,Michael,Davis,1959-07-17,Male,(592) 318-7570,michael.davis@gmail.com,6758 Willow Dr,Uninsured,Sibling - (902) 903-8454,O+,None,,,Discharged
+P0013,Emily,Miller,1986-04-09,Female,(693) 853-9883,emily.miller@gmail.com,3666 Main St,Workers Comp,Child - (614) 973-9701,A+,None,,,Outpatient
+P0014,Michael,Harris,1937-02-17,Male,(222) 683-5033,michael.harris@hotmail.com,3953 Birch St,International,Sibling - (367) 309-6147,A-,Peanuts,,,Outpatient
+P0015,Nada,Al-Shamrani,1968-03-31,Female,+966 57 736 2638,nada.alshamrani@gmail.com,"Al-Malaz District, Jeddah",Private,Spouse - +966 53 478 5669,AB+,Penicillin,,,Outpatient
+P0016,Rachel,Thomas,1950-09-17,Female,(779) 206-3200,rachel.thomas@yahoo.com,9186 Cedar Ln,Workers Comp,Parent - (378) 388-4450,A-,Latex,,,Discharged
+P0017,Stephanie,Taylor,1930-08-21,Female,(749) 533-5533,stephanie.taylor@gmail.com,932 Oak Ave,Medicaid,Sibling - (265) 859-8239,AB-,Multiple,,,Emergency
+P0018,Bandar,Al-Otaibi,1995-06-06,Male,+966 56 230 1685,bandar.alotaibi@hotmail.com,"Al-Sulaimaniyah District, Khobar",Medicaid,Parent - +966 51 462 7658,A+,Aspirin,2025-04-05,2025-07-10,Outpatient
+P0019,Sarah,Garcia,1936-12-12,Female,(373) 263-2771,sarah.garcia@yahoo.com,6845 Elm Dr,Medicaid,Child - (458) 412-4728,O-,Penicillin,,,Outpatient
+P0020,Hala,Al-Dosari,1934-12-14,Female,+966 58 509 9785,hala.aldosari@hotmail.com,"Al-Nakhil District, Dammam",Medicaid,Sibling - +966 50 211 8119,A-,Aspirin,2025-02-25,2025-07-22,Discharged
+P0021,Daniel,White,1965-05-09,Male,(825) 546-1027,daniel.white@hotmail.com,4273 Main St,Medicare,Sibling - (738) 421-3041,AB-,Peanuts,,,Discharged
+P0022,Ashley,Martinez,1961-03-24,Female,(530) 780-7211,ashley.martinez@hotmail.com,2185 Elm Dr,Workers Comp,Spouse - (411) 393-4443,AB+,Peanuts,2024-09-28,2025-07-21,Emergency
+P0023,Matthew,Taylor,1972-02-22,Male,(627) 779-6491,matthew.taylor@gmail.com,1489 Cedar Ln,Medicaid,Parent - (125) 147-5011,AB+,Penicillin,,,Emergency
+P0024,Ashley,White,1930-12-30,Female,(509) 349-3417,ashley.white@hotmail.com,6391 Willow Dr,Uninsured,Parent - (280) 923-9486,A-,Multiple,,,Emergency
+P0025,Yazeed,Al-Harbi,2010-01-04,Male,+966 57 727 9270,yazeed.alharbi@hotmail.com,"Al-Nakhil District, Abha",Uninsured,Child - +966 54 869 5050,B+,Latex,2024-11-11,2025-07-20,Discharged
+P0026,Michelle,Williams,1954-10-30,Female,(443) 427-9849,michelle.williams@gmail.com,3941 Cedar Ln,Uninsured,Parent - (823) 319-2052,B+,Penicillin,,,Emergency
+P0027,Sarah,Miller,1931-01-22,Female,(977) 883-7232,sarah.miller@yahoo.com,6481 Main St,Uninsured,Child - (651) 865-9947,AB-,Aspirin,,,Outpatient
+P0028,Fatima,Al-Enezi,1934-11-03,Female,+966 52 960 8657,fatima.alenezi@gmail.com,"Al-Woroud District, Khobar",Workers Comp,Spouse - +966 51 758 8022,O+,Shellfish,2025-05-03,,Outpatient
+P0029,Christopher,Hernandez,1944-09-11,Male,(870) 951-7906,christopher.hernandez@yahoo.com,6311 Cedar Ln,International,Spouse - (458) 329-2124,O-,None,2025-07-20,2025-07-29,Inpatient
+P0030,Robert,Jones,1960-02-09,Male,(576) 816-5198,robert.jones@yahoo.com,1974 Elm Dr,Medicaid,Sibling - (210) 692-1420,A-,Multiple,,,Discharged
+P0031,Ashley,Miller,1951-09-21,Female,(204) 813-5941,ashley.miller@hotmail.com,9800 Elm Dr,Workers Comp,Child - (777) 479-2129,A+,Aspirin,,,Discharged
+P0032,Lisa,Wilson,1978-06-18,Female,(545) 280-9548,lisa.wilson@hotmail.com,7632 Pine Rd,Uninsured,Sibling - (430) 972-5022,O-,Peanuts,2025-03-15,2025-07-28,Inpatient
+P0033,Amanda,Smith,1991-01-25,Female,(599) 317-6813,amanda.smith@yahoo.com,5425 Pine Rd,International,Sibling - (669) 110-9464,AB+,Shellfish,,,Outpatient
+P0034,Stephanie,Davis,1969-10-05,Female,(911) 117-2524,stephanie.davis@yahoo.com,8141 Willow Dr,Medicaid,Sibling - (779) 695-7046,O+,Latex,,,Emergency
+P0035,Amanda,Anderson,1951-06-15,Female,(336) 223-4155,amanda.anderson@yahoo.com,5123 Cedar Ln,Medicaid,Child - (383) 841-9595,B+,Penicillin,2025-04-27,2025-07-26,Discharged
+P0036,Saud,Al-Rashid,1982-06-02,Male,+966 54 146 1893,saud.alrashid@outlook.com,"Al-Sulaimaniyah District, Najran",Uninsured,Spouse - +966 50 687 5658,B+,Latex,,,Emergency
+P0037,James,Taylor,1956-10-08,Male,(603) 175-1878,james.taylor@gmail.com,1170 Birch St,Medicaid,Spouse - (671) 882-7818,AB+,None,2025-01-22,2025-07-21,Outpatient
+P0038,Dina,Al-Thani,1967-11-12,Female,+966 59 857 2625,dina.althani@gmail.com,"Al-Malaz District, Jazan",Medicare,Parent - +966 53 277 2229,AB+,Latex,,,Outpatient
+P0039,Jessica,Johnson,1971-11-19,Female,(819) 980-8438,jessica.johnson@gmail.com,4820 Cedar Ln,International,Parent - (535) 217-9922,AB+,Multiple,,,Outpatient
+P0040,Michael,Johnson,1984-07-24,Male,(549) 227-8679,michael.johnson@hotmail.com,5139 Cedar Ln,Workers Comp,Child - (548) 182-1653,O+,Aspirin,2024-09-29,,Emergency
+P0041,Tariq,Al-Malki,2009-05-07,Male,+966 52 581 9502,tariq.almalki@outlook.com,"Al-Malaz District, Jazan",Workers Comp,Child - +966 57 193 8700,AB+,Penicillin,,,Discharged
+P0042,Ryan,Garcia,1936-08-01,Male,(395) 778-7561,ryan.garcia@hotmail.com,6844 Willow Dr,Private,Sibling - (431) 218-7622,O-,None,2024-09-02,2025-07-21,Inpatient
+P0043,Matthew,Lopez,1953-07-05,Male,(878) 152-4335,matthew.lopez@yahoo.com,8267 Willow Dr,International,Child - (224) 129-4920,AB+,Peanuts,,,Outpatient
+P0044,Maryam,Al-Qahtani,1982-05-15,Female,+966 51 763 3522,maryam.alqahtani@hotmail.com,"Al-Sahafah District, Jeddah",Uninsured,Child - +966 53 567 3369,AB+,Peanuts,,,Emergency
+P0045,Ryan,Williams,1980-10-01,Male,(906) 619-5377,ryan.williams@gmail.com,6898 Maple Ave,Workers Comp,Child - (986) 252-8316,AB+,Multiple,,,Emergency
+P0046,Michelle,Hernandez,1987-02-03,Female,(339) 976-7730,michelle.hernandez@gmail.com,4012 Birch St,Uninsured,Child - (779) 911-3492,O-,Latex,2025-06-01,2025-07-17,Emergency
+P0047,Ryan,Anderson,1957-09-12,Male,(115) 839-3361,ryan.anderson@yahoo.com,8717 Willow Dr,Private,Sibling - (738) 809-7512,A-,Peanuts,2025-02-17,2025-07-08,Inpatient
+P0048,Amy,Taylor,1946-03-21,Female,(340) 746-5708,amy.taylor@gmail.com,688 Oak Ave,International,Spouse - (554) 270-5906,O+,None,2025-07-12,2025-08-03,Inpatient
+P0049,Maha,Al-Harbi,1961-05-31,Female,+966 59 798 3950,maha.alharbi@gmail.com,"Al-Woroud District, Medina",Uninsured,Parent - +966 57 697 3344,A-,Shellfish,,,Outpatient
+P0050,Amani,Al-Rashid,1992-01-02,Female,+966 58 261 2210,amani.alrashid@hotmail.com,"King Fahd District, Abha",Uninsured,Sibling - +966 57 965 5949,AB+,Latex,2024-11-30,,Outpatient
+P0051,Rachel,Martinez,2019-02-16,Female,(381) 108-1803,rachel.martinez@hotmail.com,459 Birch St,Medicaid,Sibling - (324) 751-4115,AB+,Multiple,,,Discharged
+P0052,Kevin,Brown,1953-07-31,Male,(134) 693-6977,kevin.brown@hotmail.com,5161 Willow Dr,Private,Child - (279) 305-3165,A-,Aspirin,,,Discharged
+P0053,James,Taylor,2001-04-22,Male,(579) 177-3306,james.taylor@gmail.com,5649 Oak Ave,Uninsured,Spouse - (370) 649-3024,AB-,None,,,Emergency
+P0054,Rachel,Gonzalez,1969-09-20,Female,(582) 125-6374,rachel.gonzalez@hotmail.com,1875 Elm Dr,Uninsured,Sibling - (764) 518-2911,A-,Latex,,,Outpatient
+P0055,Zahra,Al-Zahrani,2005-03-15,Female,+966 56 564 7078,zahra.alzahrani@outlook.com,"Al-Sulaimaniyah District, Medina",International,Spouse - +966 57 730 7686,B+,Peanuts,,,Discharged
+P0056,Michelle,Davis,2001-06-09,Female,(657) 760-6876,michelle.davis@gmail.com,1727 Maple Ave,Medicare,Child - (193) 778-4475,AB+,Penicillin,2025-07-10,2025-07-28,Inpatient
+P0057,Michael,Jackson,1956-06-23,Male,(932) 990-4817,michael.jackson@yahoo.com,9707 Elm Dr,Medicaid,Parent - (653) 356-3858,A+,Aspirin,2024-08-31,2025-07-31,Inpatient
+P0058,Majed,Al-Shamrani,2005-07-14,Male,+966 54 153 3076,majed.alshamrani@outlook.com,"Al-Sulaimaniyah District, Riyadh",Medicare,Child - +966 57 896 6931,A-,Latex,2024-12-16,2025-07-05,Inpatient
+P0059,Michelle,Smith,2009-08-03,Female,(536) 802-2768,michelle.smith@yahoo.com,7947 Birch St,Private,Parent - (167) 229-5505,A-,None,,,Discharged
+P0060,Michelle,Thomas,1968-07-31,Female,(912) 818-2874,michelle.thomas@hotmail.com,7148 Oak Ave,Medicaid,Child - (447) 947-8430,O+,Peanuts,,,Emergency
+P0061,Lama,Al-Malki,1946-09-23,Female,+966 57 168 2494,lama.almalki@gmail.com,"Al-Sulaimaniyah District, Khobar",International,Sibling - +966 52 669 1982,O+,None,,,Discharged
+P0062,Melissa,Johnson,1957-10-06,Female,(460) 206-9313,melissa.johnson@gmail.com,9937 Cedar Ln,Medicare,Sibling - (965) 669-7022,O-,Penicillin,2025-03-15,2025-07-10,Inpatient
+P0063,Anthony,Rodriguez,1992-12-25,Male,(819) 880-6062,anthony.rodriguez@yahoo.com,3055 Cedar Ln,Medicaid,Child - (171) 245-1502,A+,Penicillin,2024-11-06,,Inpatient
+P0064,Emily,Lopez,1938-12-06,Female,(153) 259-3579,emily.lopez@hotmail.com,5414 Oak Ave,Uninsured,Child - (597) 721-8242,A-,Aspirin,,,Emergency
+P0065,William,Wilson,1969-07-26,Male,(639) 783-6053,william.wilson@gmail.com,4740 Willow Dr,Medicare,Spouse - (309) 408-4460,O+,Shellfish,2025-03-09,2025-08-04,Outpatient
+P0066,Emily,Jones,2001-03-31,Female,(612) 672-6802,emily.jones@gmail.com,8825 Elm Dr,Medicare,Child - (179) 982-6129,A+,Peanuts,,,Emergency
+P0067,Jessica,Brown,1994-12-05,Female,(275) 920-8538,jessica.brown@hotmail.com,441 Maple Ave,Medicare,Parent - (546) 703-7560,A-,Peanuts,2025-01-14,2025-07-12,Inpatient
+P0068,Kimberly,Garcia,1992-12-30,Female,(643) 622-4176,kimberly.garcia@yahoo.com,8463 Oak Ave,Medicare,Parent - (362) 302-3842,B+,Penicillin,2024-09-03,,Outpatient
+P0069,Michelle,White,2008-11-27,Female,(984) 742-6179,michelle.white@gmail.com,7454 Maple Ave,Uninsured,Sibling - (915) 381-1920,A-,Peanuts,,,Discharged
+P0070,Sarah,Johnson,1998-12-27,Female,(760) 984-2479,sarah.johnson@hotmail.com,4803 Oak Ave,Workers Comp,Spouse - (560) 929-4084,O-,Shellfish,,,Discharged
+P0071,Christopher,Brown,1958-06-26,Male,(140) 353-8172,christopher.brown@yahoo.com,1481 Pine Rd,Private,Child - (518) 893-6543,AB-,Aspirin,2024-09-15,2025-08-02,Inpatient
+P0072,Jessica,Rodriguez,1985-08-31,Female,(183) 696-3317,jessica.rodriguez@yahoo.com,2563 Maple Ave,Workers Comp,Spouse - (417) 672-7171,O+,Penicillin,2024-08-26,2025-07-13,Discharged
+P0073,Kevin,Wilson,1991-04-26,Male,(471) 416-3953,kevin.wilson@gmail.com,6028 Main St,Medicaid,Parent - (258) 179-5846,O-,Penicillin,2024-11-18,2025-07-09,Inpatient
+P0074,Kevin,Hernandez,1959-09-14,Male,(257) 266-3962,kevin.hernandez@hotmail.com,2247 Birch St,Uninsured,Sibling - (792) 836-4891,O-,None,,,Emergency
+P0075,Jennifer,Jackson,2009-01-20,Female,(955) 298-7026,jennifer.jackson@hotmail.com,5170 Willow Dr,Private,Child - (614) 640-7859,O-,Multiple,2024-09-29,,Outpatient
+P0076,Rana,Al-Saud,2010-08-15,Female,+966 54 185 3626,rana.alsaud@hotmail.com,"Al-Olaya District, Jeddah",Uninsured,Spouse - +966 53 936 8391,B+,Multiple,2025-01-04,2025-08-03,Discharged
+P0077,Jennifer,Gonzalez,1990-02-28,Female,(128) 426-2623,jennifer.gonzalez@hotmail.com,6242 Elm Dr,Medicare,Sibling - (949) 583-3273,B+,Penicillin,,,Emergency
+P0078,Abdullah,Al-Malki,1949-12-13,Male,+966 58 844 9647,abdullah.almalki@hotmail.com,"Al-Sulaimaniyah District, Medina",Private,Spouse - +966 50 344 7878,AB+,Penicillin,,,Emergency
+P0079,Rachel,Jackson,1930-04-13,Female,(835) 247-5772,rachel.jackson@yahoo.com,8543 Elm Dr,Workers Comp,Child - (291) 780-2402,AB-,Penicillin,,,Discharged
+P0080,Daniel,Taylor,1942-02-14,Male,(359) 865-1266,daniel.taylor@yahoo.com,6438 Maple Ave,International,Spouse - (890) 695-6447,AB-,Penicillin,,,Outpatient
+P0081,Ryan,Anderson,1982-08-27,Male,(164) 833-8498,ryan.anderson@gmail.com,3086 Pine Rd,Medicaid,Spouse - (423) 417-9444,B-,None,2024-10-30,2025-08-03,Emergency
+P0082,James,Lopez,2001-10-10,Male,(227) 918-7029,james.lopez@yahoo.com,5538 Cedar Ln,Private,Parent - (608) 808-9151,O-,Peanuts,2024-11-12,2025-07-27,Discharged
+P0083,Lisa,Wilson,1983-01-18,Female,(428) 205-2311,lisa.wilson@yahoo.com,3056 Cedar Ln,Workers Comp,Child - (270) 806-8272,AB+,Peanuts,,,Discharged
+P0084,Rachel,Wilson,1958-09-15,Female,(787) 752-7655,rachel.wilson@yahoo.com,1039 Oak Ave,Workers Comp,Child - (135) 229-2101,A+,Penicillin,2025-01-29,2025-07-05,Outpatient
+P0085,Kevin,Anderson,1995-11-04,Male,(881) 178-3255,kevin.anderson@hotmail.com,6195 Willow Dr,International,Sibling - (355) 216-1424,O+,Aspirin,,,Outpatient
+P0086,James,Rodriguez,1954-05-10,Male,(810) 602-4279,james.rodriguez@gmail.com,3615 Cedar Ln,Medicaid,Child - (189) 929-6236,A-,Peanuts,2024-10-27,2025-07-18,Discharged
+P0087,Layla,Al-Ghamdi,2018-08-23,Female,+966 51 305 3275,layla.alghamdi@gmail.com,"Al-Rawdah District, Khobar",Workers Comp,Sibling - +966 57 922 3126,A+,Aspirin,2025-07-02,2025-07-13,Inpatient
+P0088,Kimberly,Wilson,2013-08-01,Female,(424) 757-2215,kimberly.wilson@yahoo.com,1308 Pine Rd,Workers Comp,Parent - (886) 232-8088,AB-,Penicillin,2025-06-02,2025-07-26,Inpatient
+P0089,Najla,Al-Qahtani,1979-03-31,Female,+966 51 356 4216,najla.alqahtani@outlook.com,"King Fahd District, Khobar",Private,Spouse - +966 58 756 3762,B+,Latex,,,Outpatient
+P0090,Melissa,White,1967-10-29,Female,(146) 756-5336,melissa.white@hotmail.com,564 Oak Ave,International,Spouse - (609) 742-9938,O+,Shellfish,,,Discharged
+P0091,Jason,Gonzalez,2004-07-29,Male,(805) 161-3589,jason.gonzalez@yahoo.com,7530 Oak Ave,Medicaid,Sibling - (721) 247-6121,O-,Peanuts,2025-02-09,2025-07-23,Discharged
+P0092,Abeer,Al-Saud,2010-09-02,Female,+966 53 577 3007,abeer.alsaud@hotmail.com,"Al-Nakhil District, Jeddah",Medicare,Spouse - +966 54 493 7850,B-,Penicillin,2025-05-15,2025-07-06,Outpatient
+P0093,Jennifer,Garcia,1946-02-27,Female,(610) 415-9148,jennifer.garcia@gmail.com,8533 Willow Dr,Uninsured,Parent - (320) 697-6781,O+,Shellfish,2025-07-10,,Inpatient
+P0094,Jessica,Jackson,1995-08-30,Female,(237) 370-6992,jessica.jackson@yahoo.com,1861 Birch St,Medicare,Parent - (471) 666-5728,A+,Peanuts,2025-01-19,2025-07-11,Inpatient
+P0095,David,Brown,2002-01-08,Male,(671) 474-3363,david.brown@gmail.com,6214 Maple Ave,Medicare,Parent - (830) 441-8761,A+,None,,,Emergency
+P0096,William,Harris,1990-05-10,Male,(731) 857-5902,william.harris@hotmail.com,2762 Birch St,Workers Comp,Sibling - (586) 935-1272,O-,Latex,,,Discharged
+P0097,Hanan,Al-Mutairi,1939-03-20,Female,+966 54 771 4728,hanan.almutairi@outlook.com,"Al-Sahafah District, Riyadh",Workers Comp,Child - +966 52 941 4968,O-,Penicillin,2024-10-15,2025-08-01,Inpatient
+P0098,Lama,Al-Dawsari,2014-08-15,Female,+966 53 520 9221,lama.aldawsari@outlook.com,"Al-Woroud District, Mecca",Medicaid,Parent - +966 58 432 8837,A+,Latex,,,Emergency
+P0099,Rania,Al-Subai,1983-07-24,Female,+966 53 352 5571,rania.alsubai@outlook.com,"Al-Sahafah District, Dammam",Private,Parent - +966 57 424 8861,B-,Aspirin,,,Discharged
+P0100,Jessica,Brown,1982-02-12,Female,(504) 938-6654,jessica.brown@gmail.com,8999 Birch St,International,Spouse - (454) 552-5201,A+,Aspirin,,,Emergency
+P0101,Angela,Jackson,1939-02-09,Female,(730) 858-4920,angela.jackson@gmail.com,2349 Oak Ave,Medicaid,Spouse - (202) 523-6411,B-,Latex,,,Emergency
+P0102,Matthew,Garcia,1981-03-18,Male,(766) 304-5706,matthew.garcia@yahoo.com,7893 Willow Dr,Medicare,Parent - (647) 856-1611,A+,Multiple,,,Outpatient
+P0103,Ryan,Gonzalez,1949-04-03,Male,(997) 138-1151,ryan.gonzalez@yahoo.com,3152 Cedar Ln,Uninsured,Child - (237) 971-9261,AB-,Aspirin,,,Emergency
+P0104,Emily,Anderson,1964-08-29,Female,(854) 445-5833,emily.anderson@hotmail.com,3150 Main St,International,Child - (946) 537-9442,B+,Shellfish,,,Discharged
+P0105,David,Taylor,1977-11-27,Male,(367) 492-4858,david.taylor@yahoo.com,4164 Main St,Workers Comp,Spouse - (367) 769-6890,AB-,Aspirin,,,Outpatient
+P0106,Layla,Al-Enezi,1969-08-17,Female,+966 51 754 5833,layla.alenezi@hotmail.com,"King Fahd District, Najran",Uninsured,Parent - +966 57 865 7121,B-,Penicillin,2024-12-06,2025-07-10,Emergency
+P0107,Jason,Davis,1950-02-18,Male,(640) 820-6927,jason.davis@gmail.com,1441 Willow Dr,Workers Comp,Parent - (686) 649-3455,A+,Multiple,,,Outpatient
+P0108,Kevin,Miller,1953-09-04,Male,(622) 556-1911,kevin.miller@yahoo.com,8108 Oak Ave,Workers Comp,Spouse - (672) 573-6049,O+,Peanuts,2025-01-14,,Inpatient
+P0109,Majed,Al-Dosari,1940-10-23,Male,+966 55 817 2044,majed.aldosari@outlook.com,"Al-Woroud District, Riyadh",Medicare,Sibling - +966 56 284 3218,A-,Peanuts,,,Emergency
+P0110,Melissa,Gonzalez,1962-01-09,Female,(769) 980-6697,melissa.gonzalez@gmail.com,1414 Pine Rd,Medicaid,Parent - (954) 103-1372,O+,Shellfish,,,Discharged
+P0111,Stephanie,Gonzalez,1950-04-01,Female,(454) 258-5516,stephanie.gonzalez@gmail.com,4155 Willow Dr,International,Child - (729) 884-1256,A+,Multiple,,,Outpatient
+P0112,Yazeed,Al-Hashmi,1968-12-25,Male,+966 50 511 8191,yazeed.alhashmi@gmail.com,"Al-Rawdah District, Riyadh",Workers Comp,Sibling - +966 53 935 6224,A+,Penicillin,,,Discharged
+P0113,Daniel,Martinez,2018-12-06,Male,(741) 795-7999,daniel.martinez@hotmail.com,1098 Pine Rd,International,Child - (904) 637-6222,A+,Aspirin,,,Emergency
+P0114,Tariq,Al-Saud,1940-05-04,Male,+966 53 407 3365,tariq.alsaud@hotmail.com,"Al-Rawdah District, Abha",Workers Comp,Parent - +966 56 348 5177,O+,Peanuts,,,Outpatient
+P0115,Rana,Al-Dosari,1937-02-04,Female,+966 50 374 7179,rana.aldosari@outlook.com,"Al-Rawdah District, Najran",Workers Comp,Parent - +966 57 313 6455,A-,Penicillin,2025-07-28,2025-07-29,Discharged
+P0116,Brian,Taylor,1998-04-21,Male,(345) 665-6269,brian.taylor@yahoo.com,3450 Birch St,International,Sibling - (415) 367-6892,O-,Shellfish,,,Emergency
+P0117,Kimberly,Hernandez,1956-03-08,Female,(523) 146-4625,kimberly.hernandez@hotmail.com,6173 Maple Ave,Workers Comp,Child - (402) 256-4214,A+,Aspirin,,,Discharged
+P0118,Christopher,Jackson,1960-03-09,Male,(840) 757-9037,christopher.jackson@yahoo.com,4316 Willow Dr,Medicaid,Child - (288) 655-1962,AB-,Penicillin,2025-06-27,2025-07-14,Inpatient
+P0119,Ibrahim,Al-Harbi,2011-10-28,Male,+966 52 109 4583,ibrahim.alharbi@outlook.com,"Al-Olaya District, Medina",Workers Comp,Child - +966 57 116 1108,AB-,None,,,Emergency
+P0120,Stephanie,Martinez,1956-09-19,Female,(925) 283-2753,stephanie.martinez@gmail.com,8328 Birch St,Workers Comp,Sibling - (934) 462-5379,B-,Penicillin,,,Emergency
+P0121,Rachel,Davis,2002-09-20,Female,(769) 978-1519,rachel.davis@gmail.com,5014 Oak Ave,Workers Comp,Child - (157) 752-1154,O+,Peanuts,,,Outpatient
+P0122,Rachel,Brown,1938-05-10,Female,(316) 988-8790,rachel.brown@yahoo.com,797 Elm Dr,Private,Spouse - (283) 970-6152,A-,Latex,2025-04-20,2025-07-11,Inpatient
+P0123,Angela,Williams,1989-07-10,Female,(680) 954-7375,angela.williams@hotmail.com,2761 Elm Dr,International,Parent - (909) 805-2284,O+,Multiple,,,Discharged
+P0124,William,Harris,1979-01-16,Male,(892) 434-1485,william.harris@hotmail.com,9858 Birch St,Medicaid,Sibling - (666) 484-8075,O-,Peanuts,,,Outpatient
+P0125,Jason,Harris,1957-09-06,Male,(184) 374-3526,jason.harris@yahoo.com,4137 Oak Ave,Private,Spouse - (193) 105-6050,O+,Aspirin,,,Emergency
+P0126,Ahmed,Al-Ghamdi,1948-07-14,Male,+966 58 668 9395,ahmed.alghamdi@hotmail.com,"Al-Sahafah District, Tabuk",Private,Spouse - +966 59 712 6315,A+,None,,,Emergency
+P0127,Brian,Jackson,1978-04-02,Male,(801) 489-3777,brian.jackson@gmail.com,9470 Pine Rd,Uninsured,Parent - (164) 271-8121,AB+,Aspirin,,,Discharged
+P0128,William,Rodriguez,1931-03-20,Male,(568) 209-3219,william.rodriguez@yahoo.com,8223 Elm Dr,Workers Comp,Child - (923) 982-6399,O+,Aspirin,,,Emergency
+P0129,James,Hernandez,1982-04-18,Male,(421) 281-7524,james.hernandez@yahoo.com,3390 Willow Dr,Medicaid,Sibling - (485) 387-7437,O-,Shellfish,,,Discharged
+P0130,Kevin,Jackson,1942-05-30,Male,(548) 916-5773,kevin.jackson@hotmail.com,7663 Elm Dr,Uninsured,Parent - (748) 410-4965,O+,Latex,,,Discharged
+P0131,Lisa,Anderson,1936-08-06,Female,(647) 618-7853,lisa.anderson@hotmail.com,7951 Birch St,Workers Comp,Spouse - (211) 887-5067,AB-,Latex,,,Discharged
+P0132,Kimberly,Hernandez,1969-08-29,Female,(200) 364-4637,kimberly.hernandez@hotmail.com,1835 Main St,Uninsured,Child - (890) 795-9199,O-,Aspirin,,,Outpatient
+P0133,Saud,Al-Dawsari,2011-09-13,Male,+966 52 456 6110,saud.aldawsari@hotmail.com,"Al-Olaya District, Jeddah",Uninsured,Sibling - +966 57 199 8178,B-,Shellfish,,,Emergency
+P0134,John,Hernandez,2006-07-03,Male,(628) 278-3623,john.hernandez@yahoo.com,2792 Elm Dr,Uninsured,Parent - (290) 755-8080,O-,Penicillin,,,Emergency
+P0135,Christopher,White,1941-03-24,Male,(821) 319-4371,christopher.white@yahoo.com,6470 Main St,Workers Comp,Parent - (474) 433-4228,A-,Multiple,,,Emergency
+P0136,Stephanie,Hernandez,2012-02-26,Female,(701) 216-6700,stephanie.hernandez@yahoo.com,6467 Birch St,International,Sibling - (729) 704-2388,B+,Multiple,,,Outpatient
+P0137,Hassan,Al-Subai,1998-11-06,Male,+966 56 710 3258,hassan.alsubai@outlook.com,"Al-Woroud District, Mecca",Uninsured,Parent - +966 58 270 9022,O+,Penicillin,,,Discharged
+P0138,Rachel,Johnson,2018-10-24,Female,(239) 299-7290,rachel.johnson@hotmail.com,257 Willow Dr,Uninsured,Child - (827) 960-8272,O+,Latex,,,Emergency
+P0139,James,Johnson,2018-11-15,Male,(272) 899-8492,james.johnson@hotmail.com,3783 Cedar Ln,Medicare,Sibling - (893) 656-7010,A-,Shellfish,2024-12-22,2025-07-22,Inpatient
+P0140,Saud,Al-Otaibi,1951-01-24,Male,+966 55 982 2425,saud.alotaibi@hotmail.com,"King Fahd District, Abha",International,Sibling - +966 59 747 8015,B-,Penicillin,,,Outpatient
+P0141,Jason,Johnson,1982-07-05,Male,(711) 651-3758,jason.johnson@yahoo.com,5847 Cedar Ln,Private,Spouse - (238) 868-7743,AB+,Shellfish,2025-03-16,2025-07-31,Inpatient
+P0142,Robert,Jones,2004-04-28,Male,(601) 245-5402,robert.jones@hotmail.com,4155 Birch St,Medicare,Spouse - (512) 627-5558,O+,Peanuts,,,Discharged
+P0143,Ryan,Williams,2007-02-03,Male,(914) 647-7516,ryan.williams@gmail.com,5969 Oak Ave,Private,Sibling - (948) 390-6533,B-,Peanuts,,,Outpatient
+P0144,Angela,Johnson,2011-11-30,Female,(116) 227-3588,angela.johnson@yahoo.com,1731 Willow Dr,Medicaid,Parent - (765) 409-3604,A+,Peanuts,,,Discharged
+P0145,William,Garcia,1946-05-13,Male,(843) 816-4836,william.garcia@yahoo.com,6593 Cedar Ln,Medicaid,Child - (179) 235-4705,A-,None,,,Emergency
+P0146,Ryan,Wilson,1948-05-18,Male,(334) 492-2463,ryan.wilson@hotmail.com,7926 Oak Ave,Private,Sibling - (240) 491-3181,A-,Aspirin,,,Outpatient
+P0147,Christopher,Lopez,1945-07-22,Male,(730) 803-8248,christopher.lopez@gmail.com,2580 Birch St,Medicare,Child - (459) 539-6152,A-,Penicillin,,,Outpatient
+P0148,Matthew,Harris,1963-11-07,Male,(968) 967-5942,matthew.harris@gmail.com,4768 Main St,International,Spouse - (902) 912-4921,O+,Aspirin,,,Emergency
+P0149,Turki,Al-Rashid,1960-12-31,Male,+966 52 496 7895,turki.alrashid@hotmail.com,"Al-Nakhil District, Khobar",Medicare,Spouse - +966 59 169 1225,O-,Multiple,,,Discharged
+P0150,Stephanie,Martinez,1957-05-25,Female,(818) 511-2350,stephanie.martinez@hotmail.com,6906 Birch St,Private,Spouse - (623) 308-3545,AB+,None,,,Discharged
+P0151,James,Wilson,1939-11-16,Male,(188) 544-2900,james.wilson@yahoo.com,1048 Elm Dr,International,Parent - (222) 112-3248,AB+,Latex,2025-05-13,2025-07-24,Inpatient
+P0152,Emily,Lopez,1978-10-20,Female,(889) 130-6488,emily.lopez@yahoo.com,4503 Oak Ave,International,Spouse - (608) 566-9368,A-,Aspirin,,,Discharged
+P0153,William,Garcia,1937-11-26,Male,(333) 858-9336,william.garcia@gmail.com,1785 Oak Ave,Medicare,Child - (472) 492-3458,A+,Penicillin,2025-07-17,2025-07-06,Outpatient
+P0154,Jennifer,Hernandez,1996-11-22,Female,(377) 945-2276,jennifer.hernandez@hotmail.com,6919 Maple Ave,International,Spouse - (283) 328-9450,A-,Shellfish,2025-01-11,,Inpatient
+P0155,Kimberly,Martinez,1984-07-13,Female,(108) 477-4287,kimberly.martinez@yahoo.com,1515 Willow Dr,Private,Child - (891) 894-4201,B-,Peanuts,,,Outpatient
+P0156,Robert,Jackson,1985-03-06,Male,(101) 877-7164,robert.jackson@hotmail.com,257 Maple Ave,Workers Comp,Parent - (529) 603-1981,A-,Penicillin,2025-06-18,,Outpatient
+P0157,Najla,Al-Subai,2000-10-04,Female,+966 59 197 9280,najla.alsubai@gmail.com,"Al-Olaya District, Abha",Workers Comp,Spouse - +966 56 778 3141,A-,Shellfish,,,Outpatient
+P0158,Nicole,Hernandez,1949-07-21,Female,(339) 176-4321,nicole.hernandez@gmail.com,7517 Cedar Ln,Medicaid,Child - (577) 421-7660,B+,None,2024-11-03,2025-07-11,Inpatient
+P0159,Nada,Al-Malki,1937-03-28,Female,+966 52 926 5984,nada.almalki@outlook.com,"Al-Olaya District, Jeddah",Private,Parent - +966 51 828 5066,B-,Multiple,,,Discharged
+P0160,Hala,Al-Ghamdi,2012-11-26,Female,+966 57 669 5093,hala.alghamdi@gmail.com,"Al-Woroud District, Riyadh",Medicaid,Spouse - +966 50 163 4641,A-,Multiple,,,Outpatient
+P0161,Anthony,White,1946-07-03,Male,(166) 302-8265,anthony.white@gmail.com,1328 Main St,Medicare,Child - (151) 272-8096,AB-,None,,,Emergency
+P0162,Emily,Lopez,1974-02-06,Female,(386) 556-3435,emily.lopez@gmail.com,3166 Cedar Ln,Uninsured,Child - (162) 189-5583,AB+,Peanuts,,,Emergency
+P0163,Ziad,Al-Saud,1991-09-24,Male,+966 55 591 9921,ziad.alsaud@hotmail.com,"Al-Woroud District, Riyadh",Private,Parent - +966 50 426 4588,AB-,Peanuts,2025-03-14,,Inpatient
+P0164,Kimberly,White,1940-01-13,Female,(353) 772-4951,kimberly.white@yahoo.com,2715 Oak Ave,Uninsured,Sibling - (959) 965-3846,B-,Shellfish,,,Outpatient
+P0165,Angela,White,1985-06-15,Female,(676) 292-9064,angela.white@hotmail.com,5861 Pine Rd,Medicare,Spouse - (157) 338-4584,B+,Peanuts,2024-11-08,2025-07-25,Inpatient
+P0166,Jason,Jones,1955-06-02,Male,(160) 122-3420,jason.jones@hotmail.com,3007 Maple Ave,Workers Comp,Sibling - (174) 482-7481,A-,Multiple,2025-02-13,2025-07-31,Inpatient
+P0167,Kimberly,Taylor,1985-01-19,Female,(328) 781-3872,kimberly.taylor@yahoo.com,2954 Maple Ave,Medicaid,Spouse - (818) 686-7415,AB+,Penicillin,2025-05-03,2025-07-06,Inpatient
+P0168,Kevin,White,1992-03-24,Male,(439) 863-2274,kevin.white@gmail.com,8229 Pine Rd,International,Spouse - (941) 825-6500,AB-,Penicillin,,,Emergency
+P0169,Mansour,Al-Malki,2005-04-19,Male,+966 50 495 8179,mansour.almalki@outlook.com,"Al-Malaz District, Jeddah",Uninsured,Child - +966 55 659 7149,B+,Peanuts,2024-12-02,2025-07-17,Inpatient
+P0170,David,Anderson,1943-04-25,Male,(120) 426-5278,david.anderson@gmail.com,647 Cedar Ln,Uninsured,Parent - (849) 176-9962,AB-,Penicillin,2025-02-12,2025-07-16,Inpatient
+P0171,Daniel,Garcia,1964-02-02,Male,(154) 203-6424,daniel.garcia@gmail.com,7213 Pine Rd,Workers Comp,Sibling - (776) 388-5872,O+,Latex,,,Outpatient
+P0172,Emily,Johnson,1947-05-28,Female,(189) 401-8869,emily.johnson@gmail.com,162 Birch St,Medicaid,Sibling - (183) 584-2892,A+,Penicillin,2024-12-06,2025-07-20,Discharged
+P0173,Lisa,Jackson,1938-01-03,Female,(490) 478-4056,lisa.jackson@yahoo.com,3129 Maple Ave,Uninsured,Sibling - (331) 957-5400,AB+,Peanuts,2025-05-19,2025-07-14,Inpatient
+P0174,Rania,Al-Dawsari,2005-02-11,Female,+966 58 162 7342,rania.aldawsari@outlook.com,"Al-Rawdah District, Jazan",Medicaid,Child - +966 54 180 7468,O-,Shellfish,2024-11-20,2025-07-19,Inpatient
+P0175,Michael,Anderson,2005-12-19,Male,(927) 297-3067,michael.anderson@gmail.com,2838 Elm Dr,Uninsured,Parent - (942) 742-3422,A-,Latex,,,Discharged
+P0176,Michael,Gonzalez,1932-03-21,Male,(977) 382-9514,michael.gonzalez@yahoo.com,6610 Maple Ave,Uninsured,Parent - (251) 680-2641,O+,None,2024-10-20,2025-07-10,Inpatient
+P0177,Maha,Al-Malki,1960-11-24,Female,+966 59 723 8750,maha.almalki@gmail.com,"Al-Sahafah District, Tabuk",Medicaid,Child - +966 50 505 6431,AB+,Peanuts,,,Outpatient
+P0178,Angela,Lopez,1947-08-16,Female,(418) 387-9054,angela.lopez@hotmail.com,5635 Cedar Ln,Private,Child - (892) 945-6257,B-,Penicillin,2024-09-29,2025-07-15,Discharged
+P0179,Sara,Al-Dawsari,1985-10-28,Female,+966 50 627 3604,sara.aldawsari@gmail.com,"Al-Nakhil District, Abha",Workers Comp,Spouse - +966 52 297 4288,O+,Penicillin,2025-03-30,,Inpatient
+P0180,Najla,Al-Shehri,1952-03-24,Female,+966 57 617 7503,najla.alshehri@outlook.com,"Al-Nakhil District, Dammam",Private,Child - +966 59 556 3909,A+,Penicillin,,,Emergency
+P0181,Ryan,Rodriguez,1968-06-15,Male,(495) 150-3669,ryan.rodriguez@hotmail.com,4770 Main St,Medicaid,Parent - (375) 767-7709,B-,Latex,2024-08-20,,Inpatient
+P0182,Anthony,Smith,1997-07-20,Male,(829) 826-5511,anthony.smith@yahoo.com,4235 Cedar Ln,Private,Parent - (577) 409-9530,AB-,Peanuts,,,Emergency
+P0183,Rania,Al-Hashmi,1941-06-15,Female,+966 54 800 2771,rania.alhashmi@hotmail.com,"King Fahd District, Jazan",International,Sibling - +966 54 367 5895,AB-,Aspirin,,,Outpatient
+P0184,Jason,Harris,1976-07-19,Male,(838) 126-9148,jason.harris@yahoo.com,5336 Pine Rd,Uninsured,Spouse - (697) 825-4111,O+,Peanuts,2025-04-13,2025-07-14,Discharged
+P0185,Angela,Lopez,1947-07-07,Female,(960) 773-3967,angela.lopez@yahoo.com,5018 Pine Rd,International,Sibling - (842) 927-3999,O-,Penicillin,,,Discharged
+P0186,Yusuf,Al-Mutairi,1951-02-18,Male,+966 55 366 5817,yusuf.almutairi@hotmail.com,"Al-Nakhil District, Tabuk",International,Spouse - +966 57 299 9199,O-,None,2024-08-21,2025-07-26,Inpatient
+P0187,David,Miller,2017-06-27,Male,(246) 423-3954,david.miller@gmail.com,6804 Willow Dr,Medicaid,Sibling - (749) 159-1077,AB-,Latex,,,Emergency
+P0188,Anthony,Garcia,2006-12-24,Male,(729) 544-8035,anthony.garcia@yahoo.com,1542 Pine Rd,Medicare,Spouse - (646) 304-7112,O-,Peanuts,2025-02-21,2025-07-19,Inpatient
+P0189,Ziad,Al-Qahtani,2020-04-24,Male,+966 54 232 2682,ziad.alqahtani@hotmail.com,"Al-Nakhil District, Medina",Medicare,Spouse - +966 54 397 8469,AB+,Penicillin,,,Discharged
+P0190,William,Taylor,1970-04-02,Male,(931) 513-1313,william.taylor@gmail.com,3187 Pine Rd,International,Spouse - (703) 616-3768,B+,Penicillin,2025-01-29,2025-07-10,Inpatient
+P0191,Salma,Al-Saud,1933-07-17,Female,+966 59 149 2771,salma.alsaud@outlook.com,"Al-Malaz District, Jazan",Medicare,Child - +966 57 489 3024,A+,Latex,,,Discharged
+P0192,Saud,Al-Dawsari,1948-10-28,Male,+966 59 720 3247,saud.aldawsari@hotmail.com,"King Fahd District, Jeddah",Medicare,Spouse - +966 57 303 4272,A-,Aspirin,2025-04-23,2025-07-24,Discharged
+P0193,Emily,Johnson,1930-06-29,Female,(804) 592-6416,emily.johnson@gmail.com,8232 Elm Dr,Medicare,Spouse - (955) 687-9095,A+,Latex,2024-11-16,,Outpatient
+P0194,Amy,Davis,1937-01-29,Female,(575) 151-2635,amy.davis@gmail.com,4950 Cedar Ln,International,Sibling - (536) 856-2898,AB+,Aspirin,2025-07-12,,Inpatient
+P0195,Fahad,Al-Subai,1950-06-05,Male,+966 51 481 6615,fahad.alsubai@gmail.com,"King Fahd District, Abha",Uninsured,Sibling - +966 56 806 8835,O+,Peanuts,,,Emergency
+P0196,David,Johnson,1998-02-20,Male,(704) 594-8178,david.johnson@gmail.com,1799 Birch St,Medicare,Parent - (594) 599-2850,AB-,Shellfish,,,Emergency
+P0197,Fatima,Al-Faraj,1947-02-02,Female,+966 55 631 9570,fatima.alfaraj@outlook.com,"Al-Rawdah District, Jazan",International,Parent - +966 57 454 7305,O+,Latex,2024-10-23,2025-07-16,Outpatient
+P0198,Turki,Al-Juaid,1973-03-23,Male,+966 51 869 9055,turki.aljuaid@hotmail.com,"Al-Sulaimaniyah District, Abha",Medicare,Parent - +966 58 758 7203,AB-,Aspirin,2025-06-25,2025-07-10,Emergency
+P0199,Ryan,Taylor,2002-05-22,Male,(609) 863-1291,ryan.taylor@gmail.com,5278 Oak Ave,Workers Comp,Spouse - (945) 193-5990,O+,None,,,Outpatient
+P0200,Amanda,Johnson,1995-03-09,Female,(673) 885-8751,amanda.johnson@hotmail.com,7545 Maple Ave,Medicare,Parent - (102) 449-6818,O-,None,,,Discharged

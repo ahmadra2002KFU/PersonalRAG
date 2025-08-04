@@ -1,0 +1,473 @@
+{
+  "styling_guide": {
+    "overview": {
+      "purpose": "Comprehensive styling guide covering CSS, design systems, and modern web styling practices",
+      "scope": "Web applications, responsive design, component styling, and design system implementation",
+      "format": "JSON structure with nested objects for easy parsing and integration"
+    },
+    "core_principles": {
+      "consistency": {
+        "description": "Maintain visual consistency across all components and pages",
+        "implementation": [
+          "Use design tokens for colors, spacing, typography",
+          "Establish component patterns and stick to them",
+          "Create reusable CSS classes and utility functions"
+        ]
+      },
+      "scalability": {
+        "description": "Build styles that can grow with the application",
+        "implementation": [
+          "Use CSS custom properties (variables)",
+          "Implement modular CSS architecture",
+          "Create extensible component systems"
+        ]
+      },
+      "accessibility": {
+        "description": "Ensure styles are accessible to all users",
+        "implementation": [
+          "Meet WCAG 2.1 AA standards",
+          "Support keyboard navigation",
+          "Provide sufficient color contrast",
+          "Test with screen readers"
+        ]
+      }
+    },
+    "design_tokens": {
+      "colors": {
+        "primary": {
+          "50": "#eff6ff",
+          "100": "#dbeafe",
+          "200": "#bfdbfe",
+          "300": "#93c5fd",
+          "400": "#60a5fa",
+          "500": "#3b82f6",
+          "600": "#2563eb",
+          "700": "#1d4ed8",
+          "800": "#1e40af",
+          "900": "#1e3a8a",
+          "contrast": {
+            "text_on_light": "#1e293b",
+            "text_on_dark": "#f8fafc"
+          }
+        },
+        "secondary": {
+          "50": "#f8fafc",
+          "100": "#f1f5f9",
+          "200": "#e2e8f0",
+          "300": "#cbd5e1",
+          "400": "#94a3b8",
+          "500": "#64748b",
+          "600": "#475569",
+          "700": "#334155",
+          "800": "#1e293b",
+          "900": "#0f172a"
+        },
+        "semantic": {
+          "success": "#10b981",
+          "warning": "#f59e0b",
+          "error": "#ef4444",
+          "info": "#3b82f6"
+        },
+        "neutral": {
+          "white": "#ffffff",
+          "black": "#000000",
+          "gray": {
+            "50": "#f9fafb",
+            "100": "#f3f4f6",
+            "200": "#e5e7eb",
+            "300": "#d1d5db",
+            "400": "#9ca3af",
+            "500": "#6b7280",
+            "600": "#4b5563",
+            "700": "#374151",
+            "800": "#1f2937",
+            "900": "#111827"
+          }
+        }
+      },
+      "typography": {
+        "font_families": {
+          "primary": "Inter, system-ui, -apple-system, sans-serif",
+          "secondary": "Georgia, serif",
+          "monospace": "Monaco, 'Cascadia Code', 'Fira Code', monospace"
+        },
+        "font_sizes": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.25rem",
+          "2xl": "1.5rem",
+          "3xl": "1.875rem",
+          "4xl": "2.25rem",
+          "5xl": "3rem",
+          "6xl": "3.75rem"
+        },
+        "font_weights": {
+          "thin": "100",
+          "light": "300",
+          "normal": "400",
+          "medium": "500",
+          "semibold": "600",
+          "bold": "700",
+          "extrabold": "800"
+        },
+        "line_heights": {
+          "none": "1",
+          "tight": "1.25",
+          "snug": "1.375",
+          "normal": "1.5",
+          "relaxed": "1.625",
+          "loose": "2"
+        },
+        "letter_spacing": {
+          "tighter": "-0.05em",
+          "tight": "-0.025em",
+          "normal": "0em",
+          "wide": "0.025em",
+          "wider": "0.05em",
+          "widest": "0.1em"
+        }
+      },
+      "spacing": {
+        "0": "0px",
+        "1": "0.25rem",
+        "2": "0.5rem",
+        "3": "0.75rem",
+        "4": "1rem",
+        "5": "1.25rem",
+        "6": "1.5rem",
+        "8": "2rem",
+        "10": "2.5rem",
+        "12": "3rem",
+        "16": "4rem",
+        "20": "5rem",
+        "24": "6rem",
+        "32": "8rem",
+        "40": "10rem",
+        "48": "12rem",
+        "56": "14rem",
+        "64": "16rem"
+      },
+      "border_radius": {
+        "none": "0px",
+        "sm": "0.125rem",
+        "base": "0.25rem",
+        "md": "0.375rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "2xl": "1rem",
+        "3xl": "1.5rem",
+        "full": "9999px"
+      },
+      "shadows": {
+        "sm": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+        "base": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
+        "md": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+        "lg": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+        "xl": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+        "2xl": "0 25px 50px -12px rgb(0 0 0 / 0.25)"
+      }
+    },
+    "component_patterns": {
+      "buttons": {
+        "variants": {
+          "primary": {
+            "background": "var(--color-primary-500)",
+            "color": "var(--color-white)",
+            "hover": "var(--color-primary-600)",
+            "focus": "var(--color-primary-700)",
+            "border": "none",
+            "border_radius": "var(--border-radius-md)",
+            "padding": "var(--spacing-3) var(--spacing-6)",
+            "font_weight": "var(--font-weight-medium)",
+            "transition": "all 0.2s ease"
+          },
+          "secondary": {
+            "background": "transparent",
+            "color": "var(--color-primary-500)",
+            "border": "1px solid var(--color-primary-500)",
+            "hover": "var(--color-primary-50)",
+            "focus": "var(--color-primary-100)",
+            "border_radius": "var(--border-radius-md)",
+            "padding": "var(--spacing-3) var(--spacing-6)"
+          },
+          "ghost": {
+            "background": "transparent",
+            "color": "var(--color-gray-700)",
+            "hover": "var(--color-gray-100)",
+            "border": "none",
+            "padding": "var(--spacing-2) var(--spacing-4)"
+          }
+        },
+        "sizes": {
+          "sm": {
+            "padding": "var(--spacing-2) var(--spacing-3)",
+            "font_size": "var(--font-size-sm)"
+          },
+          "md": {
+            "padding": "var(--spacing-3) var(--spacing-4)",
+            "font_size": "var(--font-size-base)"
+          },
+          "lg": {
+            "padding": "var(--spacing-4) var(--spacing-6)",
+            "font_size": "var(--font-size-lg)"
+          }
+        }
+      },
+      "forms": {
+        "input": {
+          "base": {
+            "border": "1px solid var(--color-gray-300)",
+            "border_radius": "var(--border-radius-md)",
+            "padding": "var(--spacing-3)",
+            "font_size": "var(--font-size-base)",
+            "focus": {
+              "border_color": "var(--color-primary-500)",
+              "box_shadow": "0 0 0 3px rgb(59 130 246 / 0.1)"
+            },
+            "error": {
+              "border_color": "var(--color-semantic-error)",
+              "box_shadow": "0 0 0 3px rgb(239 68 68 / 0.1)"
+            }
+          }
+        },
+        "label": {
+          "display": "block",
+          "font_size": "var(--font-size-sm)",
+          "font_weight": "var(--font-weight-medium)",
+          "color": "var(--color-gray-700)",
+          "margin_bottom": "var(--spacing-1)"
+        }
+      },
+      "cards": {
+        "base": {
+          "background": "var(--color-white)",
+          "border": "1px solid var(--color-gray-200)",
+          "border_radius": "var(--border-radius-lg)",
+          "box_shadow": "var(--shadow-base)",
+          "padding": "var(--spacing-6)"
+        },
+        "variants": {
+          "elevated": {
+            "box_shadow": "var(--shadow-lg)"
+          },
+          "outlined": {
+            "border": "2px solid var(--color-gray-300)",
+            "box_shadow": "none"
+          },
+          "filled": {
+            "background": "var(--color-gray-50)",
+            "border": "none"
+          }
+        }
+      }
+    },
+    "layout_system": {
+      "grid": {
+        "breakpoints": {
+          "sm": "640px",
+          "md": "768px",
+          "lg": "1024px",
+          "xl": "1280px",
+          "2xl": "1536px"
+        },
+        "columns": 12,
+        "gutter": "var(--spacing-6)",
+        "container_padding": "var(--spacing-4)"
+      },
+      "flexbox_patterns": {
+        "center": {
+          "display": "flex",
+          "justify_content": "center",
+          "align_items": "center"
+        },
+        "between": {
+          "display": "flex",
+          "justify_content": "space-between",
+          "align_items": "center"
+        },
+        "stack": {
+          "display": "flex",
+          "flex_direction": "column",
+          "gap": "var(--spacing-4)"
+        }
+      }
+    },
+    "responsive_design": {
+      "mobile_first": {
+        "approach": "Start with mobile styles and progressively enhance for larger screens",
+        "implementation": [
+          "Base styles target mobile devices",
+          "Use min-width media queries for larger screens",
+          "Test on actual devices, not just browser resizing"
+        ]
+      },
+      "breakpoints": {
+        "mobile": "max-width: 640px",
+        "tablet": "min-width: 641px and max-width: 1024px",
+        "desktop": "min-width: 1025px",
+        "large": "min-width: 1280px"
+      },
+      "fluid_typography": {
+        "formula": "clamp(minimum, preferred, maximum)",
+        "example": "font-size: clamp(1rem, 2vw, 1.5rem)"
+      }
+    },
+    "modern_css_features": {
+      "css_custom_properties": {
+        "usage": "Define reusable values across stylesheets",
+        "example": "--primary-color: #3b82f6; color: var(--primary-color)"
+      },
+      "css_grid": {
+        "usage": "Two-dimensional layout system for complex designs",
+        "example": "display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"
+      },
+      "flexbox": {
+        "usage": "One-dimensional layout for flexible components",
+        "properties": [
+          "justify-content",
+          "align-items",
+          "flex-direction",
+          "gap"
+        ]
+      },
+      "container_queries": {
+        "usage": "Style based on container size rather than viewport",
+        "example": "@container (min-width: 400px) { .card { padding: 2rem; } }"
+      },
+      "logical_properties": {
+        "usage": "Use logical directions instead of physical ones",
+        "properties": [
+          "margin-inline",
+          "padding-block",
+          "border-start",
+          "inset-inline"
+        ]
+      }
+    },
+    "animation_and_transitions": {
+      "transitions": {
+        "duration": {
+          "fast": "150ms",
+          "normal": "300ms",
+          "slow": "500ms"
+        },
+        "easing": {
+          "ease": "ease",
+          "ease_in": "ease-in",
+          "ease_out": "ease-out",
+          "ease_in_out": "ease-in-out"
+        },
+        "properties": [
+          "color",
+          "background-color",
+          "transform",
+          "opacity",
+          "border-color"
+        ]
+      },
+      "animations": {
+        "keyframe_examples": {
+          "fade_in": "@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }",
+          "slide_up": "@keyframes slideUp { from { transform: translateY(10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }"
+        },
+        "performance": [
+          "Use transform and opacity for smooth animations",
+          "Avoid animating layout properties",
+          "Use will-change sparingly"
+        ]
+      }
+    },
+    "performance_optimization": {
+      "css_organization": {
+        "methodologies": [
+          "BEM (Block Element Modifier)",
+          "SMACSS (Scalable and Modular Architecture for CSS)",
+          "OOCSS (Object-Oriented CSS)",
+          "Atomic CSS"
+        ],
+        "file_structure": [
+          "base/ (reset, typography, variables)",
+          "components/ (buttons, forms, cards)",
+          "layout/ (header, footer, grid)",
+          "utilities/ (helpers, overrides)"
+        ]
+      },
+      "critical_css": {
+        "definition": "CSS needed for above-the-fold content",
+        "implementation": [
+          "Inline critical CSS in <head>",
+          "Load non-critical CSS asynchronously",
+          "Use tools like Critical or Penthouse"
+        ]
+      },
+      "css_minification": {
+        "tools": [
+          "cssnano",
+          "clean-css",
+          "postcss with cssnano plugin"
+        ]
+      }
+    },
+    "dark_mode": {
+      "implementation": {
+        "css_custom_properties": {
+          "light": {
+            "--bg-primary": "#ffffff",
+            "--bg-secondary": "#f8fafc",
+            "--text-primary": "#1e293b",
+            "--text-secondary": "#64748b"
+          },
+          "dark": {
+            "--bg-primary": "#0f172a",
+            "--bg-secondary": "#1e293b",
+            "--text-primary": "#f8fafc",
+            "--text-secondary": "#cbd5e1"
+          }
+        },
+        "media_query": "@media (prefers-color-scheme: dark) { :root { ... } }",
+        "toggle_class": ".dark { ... }"
+      },
+      "accessibility": [
+        "Respect user's system preference",
+        "Provide manual toggle option",
+        "Store preference in localStorage"
+      ]
+    },
+    "testing_and_debugging": {
+      "browser_dev_tools": {
+        "features": [
+          "Inspect element styles",
+          "View computed styles",
+          "Test responsive breakpoints",
+          "Check accessibility tree"
+        ]
+      },
+      "validation_tools": [
+        "W3C CSS Validator",
+        "axe-core for accessibility",
+        "Lighthouse for performance"
+      ]
+    },
+    "best_practices": {
+      "naming_conventions": {
+        "css_classes": "kebab-case (e.g., .primary-button)",
+        "variables": "kebab-case (e.g., --primary-color)",
+        "files": "kebab-case (e.g., button-styles.css)"
+      },
+      "specificity_management": [
+        "Use classes over IDs",
+        "Avoid !important",
+        "Keep specificity low",
+        "Use CSS modules or scoped styles"
+      ],
+      "documentation": [
+        "Comment complex styles",
+        "Document component usage",
+        "Maintain style guide documentation",
+        "Use consistent formatting"
+      ]
+    }
+  }
+}

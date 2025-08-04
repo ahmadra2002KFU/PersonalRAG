@@ -1,0 +1,16 @@
+Department_ID,Department_Name,Head_of_Department,Location,Floor,Total_Beds,Available_Beds,Equipment_Count,Annual_Budget,Phone_Extension,Emergency_Contact
+DEPT001,Emergency Department,Dr. Sarah Mitchell,Building A,1,25,8,45,2500000,2911,Emergency Line
+DEPT002,Cardiology,Dr. Robert Thompson,Building B,3,20,5,32,1800000,3201,Cardiology Desk
+DEPT003,Neurology,Dr. Michael Chen,Building C,4,15,3,28,2200000,4301,Neurology Unit
+DEPT004,Pediatrics,Dr. Lisa Rodriguez,Building A,2,30,12,40,1500000,2202,Pediatric Nurses
+DEPT005,Orthopedics,Dr. David Kumar,Building B,2,18,4,35,1900000,2302,Orthopedic Surgery
+DEPT006,Radiology,Dr. Jennifer Adams,Building D,1,0,0,15,1200000,1401,Radiology Tech
+DEPT007,Internal Medicine,Dr. James Wilson,Building A,3,25,8,20,1600000,3201,Internal Med Desk
+DEPT008,Surgery,Dr. Emily Brown,Building C,2,12,2,50,3000000,2301,OR Coordinator
+DEPT009,Oncology,Dr. Christopher Lee,Building E,3,22,6,30,2800000,3501,Oncology Unit
+DEPT010,Psychiatry,Dr. Jessica Martinez,Building F,2,20,10,15,1100000,2601,Psychiatric Unit
+DEPT011,Laboratory,Dr. Michelle White,Building D,B1,0,0,25,800000,0101,Lab Manager
+DEPT012,Pharmacy,PharmD. Thomas Baker,Building A,1,0,0,12,600000,1102,Pharmacy Manager
+DEPT013,ICU,Dr. Laura Robinson,Building C,5,20,3,60,3500000,5301,ICU Coordinator
+DEPT014,Maternity,Dr. Ashley Davis,Building A,4,15,7,25,1400000,4201,Maternity Ward
+DEPT015,Rehabilitation,Helen Scott PT,Building E,1,10,6,18,750000,1501,Rehab Coordinator

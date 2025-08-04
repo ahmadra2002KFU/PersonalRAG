@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital RAG System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables following style.json */
+        :root {
+            /* Primary Colors */
+            --color-primary-50: #eff6ff;
+            --color-primary-100: #dbeafe;
+            --color-primary-200: #bfdbfe;
+            --color-primary-300: #93c5fd;
+            --color-primary-400: #60a5fa;
+            --color-primary-500: #3b82f6;
+            --color-primary-600: #2563eb;
+            --color-primary-700: #1d4ed8;
+            --color-primary-800: #1e40af;
+            --color-primary-900: #1e3a8a;
+            
+            /* Secondary Colors */
+            --color-secondary-50: #f8fafc;
+            --color-secondary-100: #f1f5f9;
+            --color-secondary-200: #e2e8f0;
+            --color-secondary-300: #cbd5e1;
+            --color-secondary-400: #94a3b8;
+            --color-secondary-500: #64748b;
+            --color-secondary-600: #475569;
+            --color-secondary-700: #334155;
+            --color-secondary-800: #1e293b;
+            --color-secondary-900: #0f172a;
+            
+            /* Semantic Colors */
+            --color-success: #10b981;
+            --color-warning: #f59e0b;
+            --color-error: #ef4444;
+            --color-info: #3b82f6;
+            
+            /* Neutral Colors */
+            --color-white: #ffffff;
+            --color-black: #000000;
+            --color-gray-50: #f9fafb;
+            --color-gray-100: #f3f4f6;
+            --color-gray-200: #e5e7eb;
+            --color-gray-300: #d1d5db;
+            --color-gray-400: #9ca3af;
+            --color-gray-500: #6b7280;
+            --color-gray-600: #4b5563;
+            --color-gray-700: #374151;
+            --color-gray-800: #1f2937;
+            --color-gray-900: #111827;
+            
+            /* Medical Colors */
+            --color-medical-critical: #ef4444;
+            --color-medical-high: #f59e0b;
+            --color-medical-medium: #3b82f6;
+            --color-medical-low: #10b981;
+            
+            /* Typography */
+            --font-family-primary: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            
+            /* Spacing */
+            --spacing-1: 0.25rem;
+            --spacing-2: 0.5rem;
+            --spacing-3: 0.75rem;
+            --spacing-4: 1rem;
+            --spacing-5: 1.25rem;
+            --spacing-6: 1.5rem;
+            --spacing-8: 2rem;
+            --spacing-10: 2.5rem;
+            --spacing-12: 3rem;
+            --spacing-16: 4rem;
+            --spacing-20: 5rem;
+            
+            /* Border Radius */
+            --border-radius-sm: 0.125rem;
+            --border-radius-base: 0.25rem;
+            --border-radius-md: 0.375rem;
+            --border-radius-lg: 0.5rem;
+            --border-radius-xl: 0.75rem;
+            --border-radius-2xl: 1rem;
+            --border-radius-full: 9999px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-base: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            
+            /* Transitions */
+            --transition-fast: 150ms;
+            --transition-normal: 300ms;
+            --transition-slow: 500ms;
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: var(--color-secondary-900);
+                --bg-secondary: var(--color-secondary-800);
+                --text-primary: var(--color-secondary-50);
+                --text-secondary: var(--color-secondary-300);
+                --border-color: var(--color-secondary-700);
+            }
+        }
+        
+        /* Light mode (default) */
+        :root {
+            --bg-primary: var(--color-white);
+            --bg-secondary: var(--color-gray-50);
+            --text-primary: var(--color-gray-900);
+            --text-secondary: var(--color-gray-600);
+            --border-color: var(--color-gray-200);
+        }
+        
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-family-primary);
+            font-size: var(--font-size-base);
+            line-height: 1.5;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+        }
+        
+        /* Background effects */
+        .background-effects {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .bg-blob {
+            position: absolute;
+            border-radius: var(--border-radius-full);
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .bg-blob-1 {
+            top: 10%;
+            left: 20%;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, var(--color-primary-500), var(--color-primary-300));
+            animation-delay: 0s;
+        }
+        
+        .bg-blob-2 {
+            bottom: 10%;
+            right: 20%;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(45deg, var(--color-secondary-500), var(--color-secondary-300));
+            animation-delay: 2s;
+        }
+        
+        .bg-blob-3 {
+            top: 60%;
+            right: 30%;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, var(--color-primary-400), var(--color-primary-600));
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
+        }
+        
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-6);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: var(--spacing-8);
+            padding-top: var(--spacing-16);
+        }
+        
+        .header h1 {
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-3);
+            background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-400));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header p {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-2);
+        }
+        
+        .model-selector {
+            display: inline-flex;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-1);
+            margin-top: var(--spacing-4);
+        }
+        
+        .model-option {
+            padding: var(--spacing-2) var(--spacing-4);
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-medium);
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            transition: all var(--transition-fast) ease;
+        }
+        
+        .model-option.active {
+            background: var(--color-primary-500);
+            color: var(--color-white);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .model-option:not(.active):hover {
+            background: var(--color-primary-50);
+            color: var(--color-primary-600);
+        }
+        
+        /* Chat container */
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-2xl);
+            box-shadow: var(--shadow-xl);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+        
+        /* Messages area */
+        .messages-area {
+            flex: 1;
+            padding: var(--spacing-6);
+            overflow-y: auto;
+            max-height: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-4);
+        }
+        
+        .message {
+            display: flex;
+            gap: var(--spacing-3);
+            max-width: 80%;
+            animation: slideUp 0.3s ease-out;
+        }
+        
+        .message.user {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+        }
+        
+        .message.assistant {
+            align-self: flex-start;
+        }
+        
+        .message-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: var(--border-radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-semibold);
+            flex-shrink: 0;
+        }
+        
+        .message.user .message-avatar {
+            background: var(--color-primary-500);
+            color: var(--color-white);
+        }
+        
+        .message.assistant .message-avatar {
+            background: var(--color-gray-200);
+            color: var(--color-gray-700);
+        }
+        
+        .message-content {
+            padding: var(--spacing-3) var(--spacing-4);
+            border-radius: var(--border-radius-xl);
+            font-size: var(--font-size-sm);
+            line-height: 1.6;
+        }
+        
+        .message.user .message-content {
+            background: var(--color-primary-500);
+            color: var(--color-white);
+        }
+        
+        .message.assistant .message-content {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+        
+        .message-sources {
+            margin-top: var(--spacing-2);
+            padding-top: var(--spacing-2);
+            border-top: 1px solid var(--color-primary-200);
+            font-size: var(--font-size-xs);
+            opacity: 0.8;
+        }
+        
+        .message-disclaimer {
+            margin-top: var(--spacing-2);
+            padding: var(--spacing-2);
+            background: var(--color-warning);
+            color: var(--color-white);
+            border-radius: var(--border-radius-md);
+            font-size: var(--font-size-xs);
+        }
+        
+        /* Input area */
+        .input-area {
+            padding: var(--spacing-6);
+            border-top: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+        }
+        
+        .input-container {
+            display: flex;
+            gap: var(--spacing-3);
+            align-items: flex-end;
+        }
+        
+        .input-wrapper {
+            flex: 1;
+            position: relative;
+        }
+        
+        .message-input {
+            width: 100%;
+            padding: var(--spacing-3) var(--spacing-4);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-xl);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: var(--font-size-base);
+            font-family: var(--font-family-primary);
+            resize: none;
+            min-height: 48px;
+            max-height: 120px;
+            transition: all var(--transition-fast) ease;
+        }
+        
+        .message-input:focus {
+            outline: none;
+            border-color: var(--color-primary-500);
+            box-shadow: 0 0 0 3px rgb(59 130 246 / 0.1);
+        }
+        
+        .message-input::placeholder {
+            color: var(--text-secondary);
+        }
+        
+        .send-button {
+            padding: var(--spacing-3) var(--spacing-4);
+            background: var(--color-primary-500);
+            color: var(--color-white);
+            border: none;
+            border-radius: var(--border-radius-xl);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-medium);
+            cursor: pointer;
+            transition: all var(--transition-fast) ease;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+            min-width: 80px;
+            justify-content: center;
+        }
+        
+        .send-button:hover:not(:disabled) {
+            background: var(--color-primary-600);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .send-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Loading states */
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+            color: var(--text-secondary);
+            font-size: var(--font-size-sm);
+            padding: var(--spacing-3);
+        }
+        
+        .typing-dots {
+            display: flex;
+            gap: var(--spacing-1);
+        }
+        
+        .typing-dot {
+            width: 4px;
+            height: 4px;
+            background: var(--color-primary-500);
+            border-radius: var(--border-radius-full);
+            animation: typingDot 1.4s infinite ease-in-out;
+        }
+        
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        .typing-dot:nth-child(3) { animation-delay: 0s; }
+        
+        @keyframes typingDot {
+            0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+            40% { transform: scale(1.2); opacity: 1; }
+        }
+        
+        /* Command suggestions */
+        .command-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-2);
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .command-chip {
+            padding: var(--spacing-2) var(--spacing-3);
+            background: var(--color-primary-50);
+            color: var(--color-primary-700);
+            border: 1px solid var(--color-primary-200);
+            border-radius: var(--border-radius-full);
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-medium);
+            cursor: pointer;
+            transition: all var(--transition-fast) ease;
+        }
+        
+        .command-chip:hover {
+            background: var(--color-primary-100);
+            border-color: var(--color-primary-300);
+            transform: translateY(-1px);
+        }
+        
+        /* Animations */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: var(--spacing-4);
+            }
+            
+            .header {
+                padding-top: var(--spacing-8);
+                margin-bottom: var(--spacing-6);
+            }
+            
+            .header h1 {
+                font-size: var(--font-size-3xl);
+            }
+            
+            .message {
+                max-width: 90%;
+            }
+            
+            .input-container {
+                flex-direction: column;
+                gap: var(--spacing-2);
+            }
+            
+            .send-button {
+                align-self: flex-end;
+            }
+        }
+        
+        /* Status indicators */
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: var(--border-radius-full);
+            margin-right: var(--spacing-2);
+        }
+        
+        .status-operational { background: var(--color-medical-low); }
+        .status-maintenance { background: var(--color-medical-high); }
+        .status-critical { background: var(--color-medical-critical); }
+        .status-medium { background: var(--color-medical-medium); }
+        
+        /* Medical priority colors */
+        .priority-critical { color: var(--color-medical-critical); }
+        .priority-high { color: var(--color-medical-high); }
+        .priority-medium { color: var(--color-medical-medium); }
+        .priority-low { color: var(--color-medical-low); }
+    </style>
+</head>
+<body>
+    <div class="background-effects">
+        <div class="bg-blob bg-blob-1"></div>
+        <div class="bg-blob bg-blob-2"></div>
+        <div class="bg-blob bg-blob-3"></div>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>🏥 Hospital AI Assistant</h1>
+            <p>Medical-grade RAG system for hospital operations</p>
+            <div class="model-selector">
+                <button class="model-option active" data-model="qwen3-1.7b">Qwen3-1.7B</button>
+                <button class="model-option" data-model="medgemma-4b">MedGemma-4B</button>
+            </div>
+        </div>
+        
+        <div class="chat-container">
+            <div class="messages-area" id="messages-area">
+                <div class="message assistant">
+                    <div class="message-avatar">🏥</div>
+                    <div class="message-content">
+                        <p>Hello! I'm your Hospital AI Assistant. I can help you with:</p>
+                        <div class="command-suggestions">
+                            <span class="command-chip" onclick="insertCommand('/patient')">/patient - Search patients</span>
+                            <span class="command-chip" onclick="insertCommand('/equipment')">/equipment - Check equipment</span>
+                            <span class="command-chip" onclick="insertCommand('/metrics')">/metrics - View metrics</span>
+                            <span class="command-chip" onclick="insertCommand('/emergency')">/emergency - Emergency info</span>
+                        </div>
+                        <p>Try asking questions like "Show me Saudi patients" or "What equipment needs maintenance?"</p>
+                        <div class="message-disclaimer">
+                            ⚠️ This information is for educational purposes only and should not replace professional medical advice.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="input-area">
+                <div class="input-container">
+                    <div class="input-wrapper">
+                        <textarea 
+                            id="message-input" 
+                            class="message-input" 
+                            placeholder="Ask about patients, equipment, metrics, or type a command..."
+                            rows="1"
+                        ></textarea>
+                    </div>
+                    <button id="send-button" class="send-button">
+                        <span id="send-text">Send</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let currentModel = 'qwen3-1.7b';
+        let isLoading = false;
+        
+        // DOM elements
+        const messagesArea = document.getElementById('messages-area');
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+        const sendText = document.getElementById('send-text');
+        const modelOptions = document.querySelectorAll('.model-option');
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            setupEventListeners();
+            autoResizeTextarea();
+        });
+        
+        // Event listeners
+        function setupEventListeners() {
+            // Send button click
+            sendButton.addEventListener('click', sendMessage);
+            
+            // Enter key to send (Shift+Enter for new line)
+            messageInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+            
+            // Auto-resize textarea
+            messageInput.addEventListener('input', autoResizeTextarea);
+            
+            // Model selection
+            modelOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    selectModel(this.dataset.model);
+                });
+            });
+        }
+        
+        // Auto-resize textarea
+        function autoResizeTextarea() {
+            messageInput.style.height = 'auto';
+            messageInput.style.height = Math.min(messageInput.scrollHeight, 120) + 'px';
+        }
+        
+        // Select model
+        function selectModel(model) {
+            currentModel = model;
+            modelOptions.forEach(option => {
+                option.classList.toggle('active', option.dataset.model === model);
+            });
+        }
+        
+        // Insert command
+        function insertCommand(command) {
+            messageInput.value = command + ' ';
+            messageInput.focus();
+            autoResizeTextarea();
+        }
+        
+        // Send message
+        async function sendMessage() {
+            const message = messageInput.value.trim();
+            if (!message || isLoading) return;
+            
+            // Add user message to chat
+            addMessage('user', message);
+            
+            // Clear input
+            messageInput.value = '';
+            autoResizeTextarea();
+            
+            // Set loading state
+            setLoading(true);
+            addTypingIndicator();
+            
+            try {
+                // Send request to backend
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        model: currentModel,
+                        include_sources: true,
+                        max_sources: 3
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                // Remove typing indicator
+                removeTypingIndicator();
+                
+                // Add assistant response
+                addMessage('assistant', data.response, {
+                    sources: data.sources,
+                    model: data.model_used,
+                    confidence: data.confidence,
+                    disclaimer: data.disclaimer,
+                    processingTime: data.processing_time
+                });
+                
+            } catch (error) {
+                console.error('Error sending message:', error);
+                removeTypingIndicator();
+                addMessage('assistant', 'Sorry, I encountered an error while processing your request. Please try again.', {
+                    disclaimer: 'System error occurred. Please contact technical support if the issue persists.'
+                });
+            } finally {
+                setLoading(false);
+            }
+        }
+        
+        // Add message to chat
+        function addMessage(sender, content, metadata = {}) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            avatar.textContent = sender === 'user' ? 'U' : '🏥';
+            
+            const messageContent = document.createElement('div');
+            messageContent.className = 'message-content';
+            
+            // Format content with proper line breaks
+            const contentP = document.createElement('p');
+            contentP.innerHTML = formatMessageContent(content);
+            messageContent.appendChild(contentP);
+            
+            // Add sources if available
+            if (metadata.sources && metadata.sources.length > 0) {
+                const sourcesDiv = document.createElement('div');
+                sourcesDiv.className = 'message-sources';
+                sourcesDiv.innerHTML = `<strong>Sources:</strong> ${metadata.sources.length} hospital records`;
+                messageContent.appendChild(sourcesDiv);
+            }
+            
+            // Add disclaimer if available
+            if (metadata.disclaimer) {
+                const disclaimerDiv = document.createElement('div');
+                disclaimerDiv.className = 'message-disclaimer';
+                disclaimerDiv.textContent = metadata.disclaimer;
+                messageContent.appendChild(disclaimerDiv);
+            }
+            
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(messageContent);
+            
+            messagesArea.appendChild(messageDiv);
+            scrollToBottom();
+        }
+        
+        // Format message content
+        function formatMessageContent(content) {
+            return content
+                .replace(/\n/g, '<br>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/•/g, '•')
+                .replace(/(Operational|Ready|Available)/gi, '<span class="status-operational">$1</span>')
+                .replace(/(Maintenance Required|Warning)/gi, '<span class="status-maintenance">$1</span>')
+                .replace(/(Critical|Error|Emergency)/gi, '<span class="status-critical">$1</span>')
+                .replace(/(High Priority)/gi, '<span class="priority-high">$1</span>')
+                .replace(/(Medium Priority)/gi, '<span class="priority-medium">$1</span>')
+                .replace(/(Low Priority)/gi, '<span class="priority-low">$1</span>');
+        }
+        
+        // Add typing indicator
+        function addTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message assistant typing-indicator';
+            typingDiv.id = 'typing-indicator';
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            avatar.textContent = '🏥';
+            
+            const content = document.createElement('div');
+            content.className = 'message-content';
+            content.innerHTML = `
+                <div class="typing-indicator">
+                    Thinking
+                    <div class="typing-dots">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+            `;
+            
+            typingDiv.appendChild(avatar);
+            typingDiv.appendChild(content);
+            
+            messagesArea.appendChild(typingDiv);
+            scrollToBottom();
+        }
+        
+        // Remove typing indicator
+        function removeTypingIndicator() {
+            const typingIndicator = document.getElementById('typing-indicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+        
+        // Set loading state
+        function setLoading(loading) {
+            isLoading = loading;
+            sendButton.disabled = loading;
+            sendText.textContent = loading ? 'Sending...' : 'Send';
+        }
+        
+        // Scroll to bottom
+        function scrollToBottom() {
+            messagesArea.scrollTop = messagesArea.scrollHeight;
+        }
+        
+        // Handle WebSocket connection (optional enhancement)
+        function setupWebSocket() {
+            const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const ws = new WebSocket(`${protocol}//${window.location.host}/ws/chat`);
+            
+            ws.onopen = function() {
+                console.log('WebSocket connected');
+            };
+            
+            ws.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                if (data.type === 'message') {
+                    removeTypingIndicator();
+                    addMessage('assistant', data.response, {
+                        sources: data.sources,
+                        model: data.model,
+                        disclaimer: data.disclaimer
+                    });
+                    setLoading(false);
+                } else if (data.type === 'typing') {
+                    if (data.status) {
+                        addTypingIndicator();
+                    } else {
+                        removeTypingIndicator();
+                    }
+                }
+            };
+            
+            ws.onclose = function() {
+                console.log('WebSocket disconnected');
+            };
+            
+            return ws;
+        }
+        
+        // Initialize WebSocket (commented out for now, using HTTP API)
+        // const websocket = setupWebSocket();
+    </script>
+</body>
+</html>
