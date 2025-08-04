@@ -46,6 +46,23 @@ Integration of MedGemma-4B-IT-GGUF model and RAGFlow-compatible embedding models
 - **Data Processing**: 358 hospital documents loaded
 - **Preview**: Web interface accessible and functional
 
+## Issues Resolved
+
+### 6. Git Configuration and Repository Setup ✅
+- **Issue**: Git errors when adding files due to:
+  - Line ending conversion warnings (LF to CRLF)
+  - Virtual environment directory access issues
+  - Missing .gitignore file
+- **Solution**:
+  - Created comprehensive `.gitignore` file to exclude:
+    - Virtual environment (`hospital_rag_env/`)
+    - Python cache files (`__pycache__/`)
+    - Model files (`*.gguf`, `*.bin`, etc.)
+    - IDE and OS specific files
+  - Configured Git for Windows: `git config core.autocrlf true`
+  - Reset and re-added files with proper exclusions
+- **Result**: Successfully staged all project files without errors
+
 ## Technical Implementation Details
 
 ### GGUF Model Support
