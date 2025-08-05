@@ -356,6 +356,11 @@ async def process_regular_query(query: str, model: str, max_sources: int) -> Dic
             "disclaimer": MEDICAL_DISCLAIMERS["general"]
         }
     
+    # Check if this is a demographic/counting query
+    query_lower = query.lower()
+    if any(keyword in query_lower for keyword in ["how many", "count", "number of"]) and any(demo in query_lower for demo in ["female", "male", "patient", "gender"]):
+        return await process_demographic_query(query, model)
+    
     # Search relevant documents
     relevant_docs = search_hospital_documents(query, None, "general")
     top_docs = relevant_docs[:max_sources]
@@ -370,6 +375,57 @@ async def process_regular_query(query: str, model: str, max_sources: int) -> Dic
         "answer": response,
         "sources": [{"title": doc["title"], "content": doc["content"][:200] + "...", "metadata": doc["metadata"]} for doc in top_docs],
         "confidence": 0.85 if top_docs else 0.1,
+        "disclaimer": MEDICAL_DISCLAIMERS["general"]
+    }
+
+async def process_demographic_query(query: str, model: str) -> Dict[str, Any]:
+    """Process demographic queries like 'How many female patients do we have?'"""
+    query_lower = query.lower()
+    
+    # Get all patient records
+    patient_docs = [doc for doc in hospital_documents if doc["type"] == "patient_record"]
+    
+    # Count by gender
+    if "female" in query_lower:
+        female_patients = [doc for doc in patient_docs if "Gender: Female" in doc["content"]]
+        count = len(female_patients)
+        gender = "female"
+        sample_patients = female_patients[:5]  # Show first 5 as examples
+    elif "male" in query_lower:
+        male_patients = [doc for doc in patient_docs if "Gender: Male" in doc["content"]]
+        count = len(male_patients)
+        gender = "male"
+        sample_patients = male_patients[:5]
+    else:
+        # General patient count
+        count = len(patient_docs)
+        gender = "total"
+        sample_patients = patient_docs[:5]
+    
+    # Generate response
+    if gender == "female":
+        response = f"Based on the hospital database, we have **{count} female patients**.\n\n"
+    elif gender == "male":
+        response = f"Based on the hospital database, we have **{count} male patients**.\n\n"
+    else:
+        response = f"Based on the hospital database, we have **{count} total patients**.\n\n"
+    
+    # Add sample patients for context
+    if sample_patients and count > 0:
+        response += "Sample patients:\n"
+        for i, patient in enumerate(sample_patients, 1):
+            patient_name = patient["title"].replace("Patient Record: ", "")
+            patient_id = patient["metadata"]["patient_id"]
+            status = patient["metadata"]["status"]
+            response += f"{i}. {patient_name} (ID: {patient_id}, Status: {status})\n"
+        
+        if count > 5:
+            response += f"... and {count - 5} more {gender} patients.\n"
+    
+    return {
+        "answer": response,
+        "sources": sample_patients[:3],  # Include top 3 as sources
+        "confidence": 1.0,
         "disclaimer": MEDICAL_DISCLAIMERS["general"]
     }
 
@@ -418,8 +474,11 @@ def search_hospital_documents(query: str, filters: Optional[Dict] = None, query_
                     score = 0  # Exclude if doesn't match filter
                     break
         
+        # Lower threshold for gender/demographic queries
+        min_threshold = 1 if any(demo in query_lower for demo in ["female", "male", "gender", "patient"]) else 3
+        
         # Only include results with meaningful scores
-        if score >= 3:  # Minimum score threshold
+        if score >= min_threshold:
             doc_with_score = doc.copy()
             doc_with_score["relevance_score"] = score
             results.append(doc_with_score)
