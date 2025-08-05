@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital RAG System - Web Interface</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .status {
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .query-section {
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #34495e;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        button {
+            background: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        .test-btn {
+            background: #27ae60;
+        }
+        .test-btn:hover {
+            background: #229954;
+        }
+        .results {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+        .loading {
+            text-align: center;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        .error {
+            background: #ffe6e6;
+            border-left-color: #e74c3c;
+            color: #c0392b;
+        }
+        .source {
+            background: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 3px solid #3498db;
+        }
+        .source-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .similarity {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        .quick-tests {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 Hospital RAG System</h1>
+        
+        <div id="status" class="status">
+            <strong>System Status:</strong> <span id="statusText">Checking...</span>
+        </div>
+
+        <div class="quick-tests">
+            <button class="test-btn" onclick="testSaudiPatients()">Test Saudi Patients</button>
+            <button class="test-btn" onclick="testOrthopedicDoctors()">Test Orthopedic Doctors</button>
+            <button class="test-btn" onclick="getSystemStats()">System Stats</button>
+        </div>
+
+        <div class="query-section">
+            <label for="queryType">Query Type:</label>
+            <select id="queryType">
+                <option value="rag">Full RAG Query (with LLM)</option>
+                <option value="search">Vector Search Only</option>
+            </select>
+
+            <label for="question">Your Question:</label>
+            <textarea id="question" placeholder="Ask about patients, doctors, equipment, or hospital data...
+Examples:
+- How many Saudi patients do we have?
+- Find orthopedic specialists
+- What equipment is in the emergency department?
+- Show me patient demographics"></textarea>
+
+            <label for="topK">Number of Results:</label>
+            <input type="number" id="topK" value="5" min="1" max="20">
+
+            <button onclick="submitQuery()">Submit Query</button>
+            <button onclick="clearResults()">Clear Results</button>
+        </div>
+
+        <div id="results" class="results" style="display: none;">
+            <h3>Results</h3>
+            <div id="resultsContent"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8000';
+
+        // Check system status on load
+        window.onload = function() {
+            checkSystemStatus();
+        };
+
+        async function checkSystemStatus() {
+            try {
+                const response = await fetch(`${API_BASE}/`);
+                const data = await response.json();
+                
+                document.getElementById('statusText').innerHTML = `
+                    ✅ Ready - ${data.total_documents} documents loaded 
+                    (${data.embedding_dimensions}D embeddings)
+                `;
+            } catch (error) {
+                document.getElementById('statusText').innerHTML = '❌ Server not responding';
+                document.getElementById('status').style.background = '#ffe6e6';
+                document.getElementById('status').style.borderColor = '#e74c3c';
+            }
+        }
+
+        async function submitQuery() {
+            const queryType = document.getElementById('queryType').value;
+            const question = document.getElementById('question').value.trim();
+            const topK = parseInt(document.getElementById('topK').value);
+
+            if (!question) {
+                alert('Please enter a question');
+                return;
+            }
+
+            showLoading();
+
+            try {
+                let response, data;
+                
+                if (queryType === 'rag') {
+                    response = await fetch(`${API_BASE}/api/rag`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            question: question,
+                            top_k: topK,
+                            model: "llama3.2:3b"
+                        })
+                    });
+                } else {
+                    response = await fetch(`${API_BASE}/api/search`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            query: question,
+                            top_k: topK
+                        })
+                    });
+                }
+
+                data = await response.json();
+                
+                if (response.ok) {
+                    displayResults(data, queryType);
+                } else {
+                    showError(`Error: ${data.detail || 'Unknown error'}`);
+                }
+            } catch (error) {
+                showError(`Network error: ${error.message}`);
+            }
+        }
+
+        async function testSaudiPatients() {
+            showLoading();
+            try {
+                const response = await fetch(`${API_BASE}/api/test/saudi-patients`);
+                const data = await response.json();
+                displayTestResults(data, 'Saudi Patients Test');
+            } catch (error) {
+                showError(`Error: ${error.message}`);
+            }
+        }
+
+        async function testOrthopedicDoctors() {
+            showLoading();
+            try {
+                const response = await fetch(`${API_BASE}/api/test/orthopedic-doctors`);
+                const data = await response.json();
+                displayTestResults(data, 'Orthopedic Doctors Test');
+            } catch (error) {
+                showError(`Error: ${error.message}`);
+            }
+        }
+
+        async function getSystemStats() {
+            showLoading();
+            try {
+                const response = await fetch(`${API_BASE}/api/stats`);
+                const data = await response.json();
+                displaySystemStats(data);
+            } catch (error) {
+                showError(`Error: ${error.message}`);
+            }
+        }
+
+        function showLoading() {
+            const results = document.getElementById('results');
+            const content = document.getElementById('resultsContent');
+            results.style.display = 'block';
+            content.innerHTML = '<div class="loading">Processing your request...</div>';
+        }
+
+        function displayResults(data, queryType) {
+            const content = document.getElementById('resultsContent');
+            
+            let html = '';
+            
+            if (queryType === 'rag') {
+                html += `<div><strong>Answer:</strong></div>`;
+                html += `<div style="margin: 15px 0; padding: 15px; background: white; border-radius: 5px;">${data.answer}</div>`;
+                html += `<div><strong>Processing Time:</strong> ${data.processing_time}s</div>`;
+                html += `<div><strong>Method:</strong> ${data.method}</div>`;
+                html += `<div><strong>Documents Searched:</strong> ${data.total_documents_searched}</div>`;
+                
+                if (data.sources && data.sources.length > 0) {
+                    html += `<div style="margin-top: 20px;"><strong>Sources:</strong></div>`;
+                    data.sources.forEach((source, index) => {
+                        html += `<div class="source">
+                            <div class="source-title">Source ${index + 1}: ${source.id}</div>
+                            <div class="similarity">Similarity: ${(source.similarity * 100).toFixed(1)}%</div>
+                            <div>${source.text}</div>
+                        </div>`;
+                    });
+                }
+            } else {
+                html += `<div><strong>Search Results:</strong></div>`;
+                html += `<div><strong>Query:</strong> ${data.query}</div>`;
+                html += `<div><strong>Total Found:</strong> ${data.total_found}</div>`;
+                html += `<div><strong>Method:</strong> ${data.search_method}</div>`;
+                
+                if (data.results && data.results.length > 0) {
+                    data.results.forEach((result, index) => {
+                        html += `<div class="source">
+                            <div class="source-title">Result ${index + 1}: ${result.id}</div>
+                            <div class="similarity">Similarity: ${(result.similarity * 100).toFixed(1)}%</div>
+                            <div><strong>Type:</strong> ${result.type}</div>
+                            <div>${result.text}</div>
+                        </div>`;
+                    });
+                }
+            }
+            
+            content.innerHTML = html;
+        }
+
+        function displayTestResults(data, title) {
+            const content = document.getElementById('resultsContent');
+            
+            let html = `<div><strong>${title}</strong></div>`;
+            html += `<div><strong>Query:</strong> ${data.query}</div>`;
+            html += `<div><strong>Method:</strong> ${data.method}</div>`;
+            html += `<div><strong>Documents Searched:</strong> ${data.total_documents_searched}</div>`;
+            
+            if (data.saudi_patients_found !== undefined) {
+                html += `<div><strong>Saudi Patients Found:</strong> ${data.saudi_patients_found}</div>`;
+                if (data.sample_patients) {
+                    html += `<div style="margin-top: 15px;"><strong>Sample Patients:</strong></div>`;
+                    data.sample_patients.forEach((patient, index) => {
+                        html += `<div class="source">
+                            <div class="source-title">${patient.id}</div>
+                            <div class="similarity">Similarity: ${(patient.similarity * 100).toFixed(1)}%</div>
+                            <div>${patient.text}</div>
+                        </div>`;
+                    });
+                }
+            }
+            
+            if (data.doctors_found !== undefined) {
+                html += `<div><strong>Doctors Found:</strong> ${data.doctors_found}</div>`;
+                if (data.doctors) {
+                    html += `<div style="margin-top: 15px;"><strong>Doctors:</strong></div>`;
+                    data.doctors.forEach((doctor, index) => {
+                        html += `<div class="source">
+                            <div class="source-title">${doctor.id}</div>
+                            <div class="similarity">Similarity: ${(doctor.similarity * 100).toFixed(1)}%</div>
+                            <div>${doctor.text}</div>
+                        </div>`;
+                    });
+                }
+            }
+            
+            content.innerHTML = html;
+        }
+
+        function displaySystemStats(data) {
+            const content = document.getElementById('resultsContent');
+            
+            let html = `<div><strong>System Statistics</strong></div>`;
+            
+            html += `<div style="margin: 15px 0;"><strong>System Info:</strong></div>`;
+            for (const [key, value] of Object.entries(data.system_info)) {
+                html += `<div>• <strong>${key.replace(/_/g, ' ')}:</strong> ${value}</div>`;
+            }
+            
+            html += `<div style="margin: 15px 0;"><strong>Data Stats:</strong></div>`;
+            html += `<div>• <strong>Total Documents:</strong> ${data.data_stats.total_documents}</div>`;
+            html += `<div>• <strong>Embedding Dimensions:</strong> ${data.data_stats.embedding_dimensions}</div>`;
+            
+            html += `<div style="margin: 15px 0;"><strong>Document Types:</strong></div>`;
+            for (const [type, count] of Object.entries(data.data_stats.document_types)) {
+                html += `<div>• <strong>${type}:</strong> ${count}</div>`;
+            }
+            
+            html += `<div style="margin: 15px 0;"><strong>Capabilities:</strong></div>`;
+            data.capabilities.forEach(capability => {
+                html += `<div>• ${capability}</div>`;
+            });
+            
+            content.innerHTML = html;
+        }
+
+        function showError(message) {
+            const results = document.getElementById('results');
+            const content = document.getElementById('resultsContent');
+            results.style.display = 'block';
+            results.className = 'results error';
+            content.innerHTML = `<div><strong>Error:</strong> ${message}</div>`;
+        }
+
+        function clearResults() {
+            const results = document.getElementById('results');
+            results.style.display = 'none';
+            results.className = 'results';
+        }
+    </script>
+</body>
+</html>

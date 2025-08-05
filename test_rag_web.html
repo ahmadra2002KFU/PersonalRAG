@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital RAG System Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+        .test-section h3 {
+            color: #34495e;
+            margin-top: 0;
+        }
+        .query-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .test-button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .test-button:hover {
+            background: #2980b9;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            background: white;
+            border-left: 4px solid #3498db;
+        }
+        .error {
+            border-left-color: #e74c3c;
+            background: #fdf2f2;
+        }
+        .success {
+            border-left-color: #27ae60;
+            background: #f2fdf4;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .stat-card {
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3498db;
+        }
+        .loading {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 Hospital RAG System Test Interface</h1>
+        
+        <div class="test-section">
+            <h3>📊 System Status</h3>
+            <button class="test-button" onclick="checkStatus()">Check Status</button>
+            <div id="status-result"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3>🔍 Search Test</h3>
+            <input type="text" class="query-input" id="search-query" placeholder="Enter search query..." value="How many Saudi patients do we have?">
+            <br>
+            <button class="test-button" onclick="testSearch()">Search</button>
+            <button class="test-button" onclick="testChat()">Chat (with AI)</button>
+            <div id="search-result"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3>🧪 Predefined Tests</h3>
+            <button class="test-button" onclick="runTest('How many Saudi patients do we have?')">Saudi Patients</button>
+            <button class="test-button" onclick="runTest('How many female patients?')">Female Patients</button>
+            <button class="test-button" onclick="runTest('Show me equipment in Emergency department')">Emergency Equipment</button>
+            <button class="test-button" onclick="runTest('Patient P0001 information')">Patient P0001</button>
+            <div id="test-result"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8000';
+
+        async function checkStatus() {
+            const resultDiv = document.getElementById('status-result');
+            resultDiv.innerHTML = '<div class="loading">⏳ Checking system status...</div>';
+            
+            try {
+                const response = await fetch(`${API_BASE}/`);
+                const data = await response.json();
+                
+                let html = '<div class="result success">';
+                html += `<h4>✅ System Status: ${data.status}</h4>`;
+                html += `<p><strong>Version:</strong> ${data.version}</p>`;
+                
+                if (data.stats) {
+                    html += '<div class="stats">';
+                    html += `<div class="stat-card"><div class="stat-number">${data.stats.total_documents}</div><div>Total Documents</div></div>`;
+                    
+                    if (data.stats.type_distribution) {
+                        for (const [type, count] of Object.entries(data.stats.type_distribution)) {
+                            html += `<div class="stat-card"><div class="stat-number">${count}</div><div>${type.charAt(0).toUpperCase() + type.slice(1)}</div></div>`;
+                        }
+                    }
+                    html += '</div>';
+                }
+                
+                html += '</div>';
+                resultDiv.innerHTML = html;
+                
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="result error">❌ Error: ${error.message}</div>`;
+            }
+        }
+
+        async function testSearch() {
+            const query = document.getElementById('search-query').value;
+            const resultDiv = document.getElementById('search-result');
+            resultDiv.innerHTML = '<div class="loading">🔍 Searching...</div>';
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/search`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        query: query,
+                        max_results: 10
+                    })
+                });
+                
+                const data = await response.json();
+                
+                let html = '<div class="result success">';
+                html += `<h4>🔍 Search Results for: "${query}"</h4>`;
+                html += `<p><strong>Found:</strong> ${data.total_found} documents</p>`;
+                
+                if (data.results && data.results.length > 0) {
+                    html += '<h5>Top Results:</h5>';
+                    data.results.slice(0, 3).forEach((doc, i) => {
+                        html += `<div style="margin: 10px 0; padding: 10px; background: #f8f9fa; border-radius: 4px;">`;
+                        html += `<strong>${i + 1}. ${doc.type} (Score: ${doc.relevance_score})</strong><br>`;
+                        html += `<small>${doc.text.substring(0, 150)}...</small>`;
+                        html += `</div>`;
+                    });
+                }
+                
+                html += '</div>';
+                resultDiv.innerHTML = html;
+                
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="result error">❌ Search Error: ${error.message}</div>`;
+            }
+        }
+
+        async function testChat() {
+            const query = document.getElementById('search-query').value;
+            const resultDiv = document.getElementById('search-result');
+            resultDiv.innerHTML = '<div class="loading">🤖 Generating AI response...</div>';
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/chat`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        message: query,
+                        model: "llama3.2:3b",
+                        max_sources: 10
+                    })
+                });
+                
+                const data = await response.json();
+                
+                let html = '<div class="result success">';
+                html += `<h4>🤖 AI Response (${data.processing_time}s, confidence: ${(data.confidence * 100).toFixed(1)}%)</h4>`;
+                html += `<div style="background: white; padding: 15px; border-radius: 6px; margin: 10px 0;">`;
+                html += data.response.replace(/\n/g, '<br>');
+                html += `</div>`;
+                
+                if (data.sources && data.sources.length > 0) {
+                    html += `<h5>📚 Sources (${data.sources.length}):</h5>`;
+                    data.sources.forEach((source, i) => {
+                        html += `<div style="margin: 5px 0; padding: 8px; background: #f8f9fa; border-radius: 4px; font-size: 12px;">`;
+                        html += `<strong>${i + 1}. ${source.type}</strong> (Score: ${source.relevance_score}) - ${source.content}`;
+                        html += `</div>`;
+                    });
+                }
+                
+                html += '</div>';
+                resultDiv.innerHTML = html;
+                
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="result error">❌ Chat Error: ${error.message}</div>`;
+            }
+        }
+
+        async function runTest(query) {
+            document.getElementById('search-query').value = query;
+            const resultDiv = document.getElementById('test-result');
+            resultDiv.innerHTML = '<div class="loading">🧪 Running test...</div>';
+            
+            await testChat();
+            
+            // Copy result to test section
+            const searchResult = document.getElementById('search-result').innerHTML;
+            resultDiv.innerHTML = searchResult;
+        }
+
+        // Auto-check status on load
+        window.onload = function() {
+            checkStatus();
+        };
+    </script>
+</body>
+</html>
